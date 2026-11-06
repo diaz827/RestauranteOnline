@@ -36,9 +36,10 @@ Los datos se cargan desde un fichero JSON, así que la carta se puede ampliar o 
 
 1. [Funcionalidades](#funcionalidades)
 2. [Tecnologías](#tecnologías)
-3. [Estructura del proyecto](#estructura-del-proyecto)
-4. [Datos de los productos](#datos-de-los-productos)
-5. [Créditos de las imágenes](#créditos-de-las-imágenes)
+3. [Instalación y configuración](#instalación-y-configuración)
+4. [Estructura del proyecto](#estructura-del-proyecto)
+5. [Datos de los productos](#datos-de-los-productos)
+6. [Créditos de las imágenes](#créditos-de-las-imágenes)
 
 ---
 
@@ -71,6 +72,55 @@ Partes comunes a todas las páginas:
 | Context API + `useReducer` | Estado global del carrito, compartido por todas las páginas. |
 | CSS propio (Flexbox y CSS Grid) | Estilos y diseño responsive. |
 | JSON | Fichero `products.json` con los datos de los platos. |
+
+---
+
+## Instalación y configuración
+
+Sigue estos pasos en orden. Solo hay que hacerlos la primera vez.
+
+### 1. Instalar las herramientas necesarias
+
+- **Node.js 20 o superior** (incluye `npm`). Descárgalo desde <https://nodejs.org/> (versión *LTS*) e instálalo con las opciones por defecto.
+- **Git**, para clonar el repositorio. Descárgalo desde <https://git-scm.com/downloads>. Si no quieres usar Git, en GitHub puedes pulsar **Code → Download ZIP** y descomprimir el archivo.
+
+Para comprobar que están instalados, abre una terminal (en Windows, *PowerShell* o *Símbolo del sistema*) y ejecuta:
+
+```bash
+node -v     # debe mostrar v20.x.x o superior
+npm -v      # debe mostrar un número de versión
+git --version
+```
+
+### 2. Descargar el proyecto
+
+```bash
+git clone https://github.com/diaz827/NOMBRE-DEL-REPOSITORIO.git
+cd NOMBRE-DEL-REPOSITORIO
+```
+
+### 3. Instalar las dependencias
+
+```bash
+npm install
+```
+
+Este comando lee `package.json` y descarga en `node_modules/` las librerías que necesita la aplicación (React, React Router, TypeScript, Vite...). No hace falta configurar nada más: los datos y las imágenes ya están dentro del proyecto.
+
+### 4. Arrancar la aplicación
+
+```bash
+npm run dev
+```
+
+En la terminal aparecerá una dirección como `http://localhost:5173/`. Ábrela en el navegador. Para parar el servidor, pulsa `Ctrl + C` en la terminal.
+
+### 5. (Opcional) Generar la versión de producción
+
+```bash
+npm run build     # crea la carpeta dist/ con la web optimizada
+npm run preview   # sirve dist/ en http://localhost:4173/ para probarla
+```
 
 ---
 
@@ -209,4 +259,3 @@ Los nombres, descripciones, precios y datos del restaurante (dirección, teléfo
 ## Autor
 
 **Díaz** · [@diaz827](https://github.com/diaz827) · 2º DAW, curso 2026-2027.
-"# RestauranteOnline" 
