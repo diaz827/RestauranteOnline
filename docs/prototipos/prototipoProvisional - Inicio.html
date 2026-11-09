@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prototipo Inicio v3 (hueso) - Crunna Diner</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+:root{--tq:#C8102E;--ch:#C8102E;--mr:#1F1F1F;--cr:#FFF4DC;--mo:#C8102E}
+*{box-sizing:border-box}body{margin:0;background:#FBF8F3;color:var(--mr);font-family:"Open Sans",system-ui,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}h1,h2,h3,p{margin:0}ul{margin:0;padding:0;list-style:none}
+.sp{letter-spacing:.18em;text-transform:uppercase;font-weight:600;font-size:13px}
+.top{background:var(--mr);color:var(--cr);display:flex;align-items:center;justify-content:space-between;padding:18px 40px}
+.top>*{flex:1}.logo{text-align:center}.logo b{display:block;font-size:30px;letter-spacing:.3em}.logo span{font-size:12px;letter-spacing:.5em;color:#FFF4DC;opacity:.7}
+.right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}.cart i{font-size:24px}.cart em{background:var(--ch);font-style:normal;font-size:11px;border-radius:10px;padding:0 6px;position:relative;top:-10px;left:-4px}
+.search{border-bottom:1px dashed #FFF4DC;color:#FFF4DC;width:180px;padding-bottom:2px}
+nav{background:#333333;color:#FFF4DC;border-bottom:3px solid var(--tq)}nav ul{display:flex;justify-content:center;gap:50px;padding:14px 0}nav li{padding-bottom:3px;border-bottom:3px solid transparent}nav li.on{border-color:var(--mo)}
+.hero{background:#3A3A3A;padding:60px 40px;min-height:300px;display:flex;align-items:center}
+.wel{background:#FBF8F3;border-left:6px solid var(--mo);border-radius:10px;padding:28px 32px;max-width:460px}.wel h1{font-size:30px}.wel p{margin:10px 0 18px}
+.btn{display:inline-block;background:var(--ch);color:var(--cr);font-weight:600;font-size:14px;padding:5px 12px;border-radius:6px}.wel .btn{padding:10px 20px;letter-spacing:.15em}
+section.w{max-width:1100px;margin:0 auto;padding:40px 24px 10px}h2{display:inline-block;font-size:24px;border-bottom:3px solid var(--mo);margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#fff;border:1px solid #E5E2DB;border-radius:12px;overflow:hidden;text-align:center}.ph{height:140px;background:#F3D9A4;display:flex;align-items:center;justify-content:center;font-size:36px}
+.b{padding:14px}.b h3{font-size:16px}.b p{font-size:13px;opacity:.8;margin:2px 0 10px}.b p:last-child{opacity:1;margin:0}s{opacity:.6;font-size:13px}
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;align-items:start;padding-bottom:40px}
+.map{height:240px;background:#F3D9A4;border:1px solid var(--tq);border-radius:12px;display:flex;align-items:center;justify-content:center}.map span{background:#fff;padding:6px 14px;border-radius:6px}
+.about h3{color:var(--ch);font-size:20px;margin-bottom:8px}
+footer{background:var(--mr);color:var(--cr);padding:40px 40px 20px}.cols{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+footer h3{color:#FFF4DC;border-bottom:2px solid #C8102E;display:inline-block;padding-bottom:3px;margin-bottom:14px}footer li{margin-bottom:10px}.soc{display:flex;gap:10px}.soc span{width:42px;height:42px;border:1px solid #FFF4DC;color:#FFF4DC;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.pay{max-width:1100px;margin:28px auto 18px;padding:16px;border-radius:10px;background:rgba(255,246,229,.08);display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.pay span{background:var(--cr);color:var(--mr);font-weight:600;font-size:13px;padding:6px 12px;border-radius:6px}
+.copy{text-align:center;font-size:13px;border-top:1px solid rgba(255,246,229,.2);padding-top:16px;max-width:1100px;margin:auto}
+@media(max-width:700px){.top{padding:14px 16px}nav ul{gap:18px}.search{display:none}.hero{padding:30px 16px}}
+</style></head><body>
+<header><div class="top"><span></span><a class="logo" href="#"><b>CRUNNA</b><span>DINER</span></a>
+<div class="right"><a class="cart sp" href="#"><i class="ti ti-shopping-cart"></i><em>7</em> Reservas</a><form class="search sp" role="search"><i class="ti ti-search"></i> Buscar</form></div></div>
+<nav><ul class="sp"><li class="on">Destacados</li><li>Productos</li><li>Reservas</li></ul></nav></header>
+<main>
+<section class="hero"><div class="wel"><h1>Comida de gigantes</h1><p>Hamburguesas, pizza, tex-mex y postres con sabor a diner americano, a un paso de la Torre de Hércules.</p><a class="btn" href="#">VER CARTA</a></div></section>
+<section class="w"><h2>Platos destacados</h2><div class="grid">
+<article class="card"><div class="ph"><i class="ti ti-photo"></i></div><div class="b"><h3>Nachos con queso</h3><p>Entrantes</p><p><span class="btn">7,90 €</span></p></div></article>
+<article class="card"><div class="ph"><i class="ti ti-photo"></i></div><div class="b"><h3>Alitas buffalo</h3><p>Entrantes</p><p><span class="btn">8,50 €</span></p></div></article>
+<article class="card"><div class="ph"><i class="ti ti-photo"></i></div><div class="b"><h3>Hamburguesa clásica</h3><p>Hamburguesas</p><p><s>10,50 €</s> <span class="btn">8,90 €</span></p></div></article>
+<article class="card"><div class="ph"><i class="ti ti-photo"></i></div><div class="b"><h3>Doble queso</h3><p>Hamburguesas</p><p><span class="btn">11,90 €</span></p></div></article>
+<article class="card"><div class="ph"><i class="ti ti-photo"></i></div><div class="b"><h3>Pizza margarita</h3><p>Pizza y pasta</p><p><span class="btn">9,50 €</span></p></div></article>
+<article class="card"><div class="ph"><i class="ti ti-photo"></i></div><div class="b"><h3>Ensalada césar</h3><p>Ensaladas</p><p><span class="btn">8,90 €</span></p></div></article>
+<article class="card"><div class="ph"><i class="ti ti-photo"></i></div><div class="b"><h3>Brownie con helado</h3><p>Postres</p><p><s>6,50 €</s> <span class="btn">5,50 €</span></p></div></article>
+<article class="card"><div class="ph"><i class="ti ti-photo"></i></div><div class="b"><h3>Batido de fresa</h3><p>Bebidas</p><p><span class="btn">4,50 €</span></p></div></article>
+</div></section>
+<section class="w"><h2>Sobre nosotros</h2><div class="about"><div class="map"><span class="sp"><i class="ti ti-map-pin"></i> Mapa</span></div>
+<div><h3>Comida de gigantes</h3><p>Crunna Diner es un restaurante ficticio de cocina americana inspirado en A Coruña y la leyenda de Gerión. Platos generosos, producto fresco y buen ambiente.</p></div></div></section>
+</main>
+<footer><div class="cols">
+<section><h3 class="sp">Visítanos</h3><ul><li><i class="ti ti-map-pin"></i> Calle Ejemplo, 12 · 15001 A Coruña</li><li><i class="ti ti-phone"></i> +34 981 00 00 00</li><li><i class="ti ti-clock"></i> Lun–Vie: 13:00–16:00 y 20:00–23:30<br>Sáb–Dom: 13:00–00:00</li></ul></section>
+<nav><h3 class="sp">Enlaces rápidos</h3><ul class="sp"><li>Destacados</li><li>Carta</li><li>Reservas</li></ul></nav>
+<section><h3 class="sp">Síguenos</h3><p class="soc"><span><i class="ti ti-brand-instagram"></i></span><span><i class="ti ti-brand-facebook"></i></span><span><i class="ti ti-brand-tiktok"></i></span></p></section></div>
+<p class="pay"><span>Visa</span><span>Mastercard</span><span>American Express</span><span>Apple Pay</span><span>Google Pay</span><span>PayPal</span></p>
+<p class="copy">© 2026 Crunna Diner</p></footer>
+</body></html>
