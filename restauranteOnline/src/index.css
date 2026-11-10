@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@theme {
+    --color-negro: #1F1F1F;
+    --color-gris-oscuro: #333333;
+    --color-rojo: #C8102E;
+    --color-hueso: #FBF8F3;
+    --color-borde: #E5E2DB;
+    --color-crema: #FFF4DC;
+
+    --font-titulos: "Oswald", sans-serif;
+    --font-texto: "Lato", sans-serif;
+    
+}
+
+body{
+    @apply bg-hueso text-negro font-texto;
+}
