@@ -7,7 +7,7 @@ Este proyecto es un ejercicio de la asignatura **Desarrollo Web en Entorno Clien
 El enunciado pide como mínimo:
 
 - Una **página principal** con una descripción de la tienda y varios productos destacados.
-- Una **página de productos** con buscador y paginación.
+- Una **página de la carta** con buscador y paginación.
 - Una **página de detalle** de cada producto, con todos sus datos y un botón para añadirlo al carrito.
 - Una **página de carrito** que permita cambiar cantidades, eliminar productos y vaciarlo, con confirmación en las acciones de borrado y con el precio total.
 - Diseño **responsive**, adaptado a pantallas grandes y pequeñas.
@@ -48,8 +48,8 @@ Los datos se cargan desde un fichero JSON, así que la carta se puede ampliar o 
 | Página | Ruta | Qué se puede hacer |
 |---|---|---|
 | Inicio | `/` | Ver el banner principal, una descripción de la tienda, los **platos destacados** y la información de contacto (dirección ficticia con mapa, teléfono, horario y redes sociales). |
-| Productos | `/productos` | Ver toda la carta en una rejilla **paginada** y **buscar** platos: se escribe un texto, se pulsa *Buscar* y aparecen los platos que lo contienen en su **nombre o descripción**. |
-| Detalle | `/productos/:id` | Ver la foto, el nombre, el precio (con el precio de oferta si lo tiene), la descripción y el resto de datos: categoría, ingredientes, alérgenos, calorías, tiempo de preparación y si es vegetariano o picante. Botón **Añadir al carrito**. |
+| Carta | `/carta` | Ver toda la carta en una rejilla **paginada** y **buscar** platos: se escribe un texto, se pulsa *Buscar* y aparecen los platos que lo contienen en su **nombre o descripción**. |
+| Detalle | `/carta/:id` | Ver la foto, el nombre, el precio (con el precio de oferta si lo tiene), la descripción y el resto de datos: categoría, ingredientes, alérgenos, calorías, tiempo de preparación y si es vegetariano o picante. Botón **Añadir al carrito**. |
 | Carrito | `/carrito` | Ver los platos añadidos, **aumentar o disminuir la cantidad** de cada uno, **eliminar** un plato y **vaciar** el carrito (las dos acciones piden **confirmación**) y ver el **precio total**. |
 | No encontrada | `*` | Mensaje de página no encontrada con enlace a la carta. |
 
@@ -68,9 +68,10 @@ Partes comunes a todas las páginas:
 | [React](https://react.dev/) | Librería para construir la interfaz con componentes. |
 | [TypeScript](https://www.typescriptlang.org/) | JavaScript con tipos; los productos se describen con la interfaz `Product`. |
 | [Vite](https://vite.dev/) | Servidor de desarrollo y empaquetado de la aplicación. |
-| [React Router](https://reactrouter.com/) | Navegación entre páginas (`/`, `/productos`, `/productos/:id`, `/carrito`). |
+| [React Router](https://reactrouter.com/) | Navegación entre páginas (`/`, `/carta`, `/carta/:id`, `/carrito`). |
 | Context API + `useReducer` | Estado global del carrito, compartido por todas las páginas. |
 | CSS propio (Flexbox y CSS Grid) | Estilos y diseño responsive. |
+| [Lucide React](https://lucide.dev/guide/packages/lucide-react) | Iconos en SVG (carrito, lupa, menú ☰...). |
 | JSON | Fichero `products.json` con los datos de los platos. |
 
 ---
@@ -149,7 +150,7 @@ npm run preview   # sirve dist/ en http://localhost:4173/ para probarla
 │   │   └── products.json    # Datos de los 42 platos
 │   ├── pages/
 │   │   ├── HomePage.tsx
-│   │   ├── ProductsPage.tsx
+│   │   ├── CartaPage.tsx
 │   │   ├── ProductDetailPage.tsx
 │   │   ├── CartPage.tsx
 │   │   └── NotFoundPage.tsx
