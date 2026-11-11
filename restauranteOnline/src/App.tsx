@@ -1,25 +1,49 @@
 import logo from './assets/imgLogos/logo.png'
-import { ShoppingCart, Menu } from 'lucide-react'
+import { ShoppingCart, Menu, Search } from 'lucide-react'
 import { useState } from 'react'
 
 function App() {
   const [menuAbierto, setMenuAbierto] = useState(false)
+  const [buscadorAbierto, setBuscadorAbierto] = useState(false)
   return (
     <>
       <header className="relative flex h-28 items-center justify-center bg-negro">
         <a href="/">
           <img src={logo} alt="Crunna Diner" className="h-20" />
         </a>
-        <button type="button" aria-label='Abrir menú' className='absolute left-4 text-crema md:hidden'>
+        <button
+          type="button"
+          aria-label='Menú'
+          aria-expanded={menuAbierto}
+          aria-controls="menu-principal"
+          onClick={() => setMenuAbierto(!menuAbierto)}
+          className='absolute left-4 text-crema md:hidden'
+        >
           <Menu className='h-6 w-6' aria-hidden='true' />
         </button>
-        <form role="search" className='absolute right-24 flex items-center'>
-          <input type="search"
-            className="w-40 rounded-full border border-borde bg-hueso px-2 py-1 text-sm text-negro"
-            placeholder="Buscar..."
-            aria-label="Buscar en la carta"
-          />
-        </form>
+        {buscadorAbierto && (
+          <form role="search" className="absolute right-32 hidden items-center md:flex">
+            <input
+              type="search"
+              autoFocus
+              className="w-40 rounded-full border border-borde bg-hueso px-2 py-1 text-sm text-negro"
+              placeholder="Buscar..."
+              aria-label="Buscar en la carta"
+            />
+          </form>
+        )}
+        <a href="/carta" aria-label="Buscar en la carta" className="absolute right-20 text-crema md:hidden">
+          <Search className="h-6 w-6" aria-hidden="true" />
+        </a>
+        <button
+          type="button"
+          aria-label="Buscar"
+          aria-expanded={buscadorAbierto}
+          onClick={() => setBuscadorAbierto(!buscadorAbierto)}
+          className="absolute right-20 hidden text-crema md:block"
+        >
+          <Search className="h-6 w-6" aria-hidden="true" />
+        </button>
         <a
           href='/carrito'
           aria-label='Carrito'
@@ -30,8 +54,10 @@ function App() {
           <span className='rounded-full bg-rojo px-2 text-sm font-bold text-crema'>7</span>
         </a>
       </header>
-      <nav className="bg-gris-oscuro border-b-4 border-rojo py-2">
-        <ul className='flex justify-center gap-8 md:gap-20'>
+      <nav
+        id="menu-principal"
+        className={`bg-gris-oscuro border-b-4 border-rojo py-2 ${menuAbierto ? 'block' : 'hidden'} md:block`}>
+        <ul className="flex flex-col items-center gap-2 md:flex-row md:justify-center md:gap-20">
           <li>
             <a href="/" aria-current="page" className='block py-2 font-titulos text-crema border-b-2 border-rojo'>Destacados</a>
           </li>
@@ -39,7 +65,7 @@ function App() {
             <a href="/carta" className="block py-2 font-titulos text-crema border-b-2 border-transparent">Carta</a>
           </li>
           <li>
-            <a href="/reservas"  className="block py-2 font-titulos text-crema border-b-2 border-transparent">Reservas</a>
+            <a href="/reservas" className="block py-2 font-titulos text-crema border-b-2 border-transparent">Reservas</a>
           </li>
         </ul>
       </nav>
