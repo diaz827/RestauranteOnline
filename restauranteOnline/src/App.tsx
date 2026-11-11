@@ -1,5 +1,5 @@
 import logo from './assets/imgLogos/logo.png'
-import { ShoppingCart, Menu, Search } from 'lucide-react'
+import { LuShoppingCart, LuMenu, LuSearch } from 'react-icons/lu'
 import { useState } from 'react'
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           }}
           className='absolute left-4 text-crema md:hidden'
         >
-          <Menu className='h-6 w-6' aria-hidden='true' />
+          <LuMenu className='h-6 w-6' aria-hidden='true' />
         </button>
         {buscadorAbierto && (
           <form
@@ -48,7 +48,7 @@ function App() {
           }}
           className="absolute right-20 text-crema"
         >
-          <Search className="h-6 w-6" aria-hidden="true" />
+          <LuSearch className="h-6 w-6" aria-hidden="true" />
         </button>
         <a
           href='/carrito'
@@ -56,7 +56,7 @@ function App() {
           className='absolute right-4 flex items-center gap-1 text-crema'
         >
 
-          <ShoppingCart className='h-6 w-6' aria-hidden='true' />
+          <LuShoppingCart className='h-6 w-6' aria-hidden='true' />
           <span className='rounded-full bg-rojo px-2 text-sm font-bold text-crema'>7</span>
         </a>
       </header>

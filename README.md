@@ -71,7 +71,7 @@ Partes comunes a todas las páginas:
 | [React Router](https://reactrouter.com/) | Navegación entre páginas (`/`, `/carta`, `/carta/:id`, `/carrito`). |
 | Context API + `useReducer` | Estado global del carrito, compartido por todas las páginas. |
 | CSS propio (Flexbox y CSS Grid) | Estilos y diseño responsive. |
-| [Lucide React](https://lucide.dev/guide/packages/lucide-react) | Iconos en SVG (carrito, lupa, menú ☰...). |
+| [React Icons](https://react-icons.github.io/react-icons/) | Iconos en SVG: los de interfaz (carrito, lupa, menú ☰) de la colección Lucide, y los logos de redes sociales y métodos de pago de Font Awesome y Simple Icons. |
 | JSON | Fichero `products.json` con los datos de los platos. |
 
 ---
