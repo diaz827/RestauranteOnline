@@ -16,31 +16,37 @@ function App() {
           aria-label='Menú'
           aria-expanded={menuAbierto}
           aria-controls="menu-principal"
-          onClick={() => setMenuAbierto(!menuAbierto)}
+          onClick={() => {
+            setMenuAbierto(!menuAbierto)
+            setBuscadorAbierto(false)
+          }}
           className='absolute left-4 text-crema md:hidden'
         >
           <Menu className='h-6 w-6' aria-hidden='true' />
         </button>
         {buscadorAbierto && (
-          <form role="search" className="absolute right-32 hidden items-center md:flex">
+          <form
+            role="search"
+            className="absolute top-full left-0 z-10 flex w-full items-center bg-gris-oscuro 
+            p-3 md:top-auto md:right-32 md:left-auto md:w-auto md:bg-transparent md:p-0">
             <input
               type="search"
               autoFocus
-              className="w-40 rounded-full border border-borde bg-hueso px-2 py-1 text-sm text-negro"
+              className="w-full md:w-40 rounded-full border border-borde bg-hueso px-2 py-1 text-sm text-negro"
               placeholder="Buscar..."
               aria-label="Buscar en la carta"
             />
           </form>
         )}
-        <a href="/carta" aria-label="Buscar en la carta" className="absolute right-20 text-crema md:hidden">
-          <Search className="h-6 w-6" aria-hidden="true" />
-        </a>
         <button
           type="button"
           aria-label="Buscar"
           aria-expanded={buscadorAbierto}
-          onClick={() => setBuscadorAbierto(!buscadorAbierto)}
-          className="absolute right-20 hidden text-crema md:block"
+          onClick={() => {
+            setBuscadorAbierto(!buscadorAbierto)
+            setMenuAbierto(false)
+          }}
+          className="absolute right-20 text-crema"
         >
           <Search className="h-6 w-6" aria-hidden="true" />
         </button>
