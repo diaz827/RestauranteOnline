@@ -47,7 +47,7 @@ Los datos se cargan desde un fichero JSON, así que la carta se puede ampliar o 
 
 | Página | Ruta | Qué se puede hacer |
 |---|---|---|
-| Inicio | `/` | Ver el banner principal, una descripción de la tienda, los **platos destacados** y la información de contacto (dirección ficticia con mapa, teléfono, horario y redes sociales). |
+| Inicio | `/` | Ver el banner principal, una descripción de la tienda, los **platos destacados** y la información de contacto (dirección con enlace al mapa, teléfono y horario ficticios, y redes sociales). |
 | Carta | `/carta` | Ver toda la carta en una rejilla **paginada** y **buscar** platos: se escribe un texto, se pulsa *Buscar* y aparecen los platos que lo contienen en su **nombre o descripción**. |
 | Detalle | `/carta/:id` | Ver la foto, el nombre, el precio (con el precio de oferta si lo tiene), la descripción y el resto de datos: categoría, ingredientes, alérgenos, calorías, tiempo de preparación y si es vegetariano o picante. Botón **Añadir al carrito**. |
 | Carrito | `/carrito` | Ver los platos añadidos, **aumentar o disminuir la cantidad** de cada uno, **eliminar** un plato y **vaciar** el carrito (las dos acciones piden **confirmación**) y ver el **precio total**. |
@@ -253,7 +253,7 @@ Todas las fotos de los platos son de [Unsplash](https://unsplash.com) y se usan 
 
 </details>
 
-Los nombres, descripciones, precios y datos del restaurante (dirección, teléfono...) son ficticios y se han creado solo para este ejercicio.
+Los nombres, descripciones, precios, teléfono, horarios y redes del restaurante son ficticios y se han creado solo para este ejercicio. La única excepción es la **ubicación** (Calle San Andrés 128, A Coruña), tomada de un local en alquiler para dar realismo al ejercicio: en ese local no existe ningún restaurante con este nombre.
 
 ---
 

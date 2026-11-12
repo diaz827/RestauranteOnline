@@ -75,6 +75,43 @@ function App() {
           </li>
         </ul>
       </nav>
+      <footer className="grid gap-8 bg-negro px-4 py-8 text-crema md:grid-cols-3">
+        <section>
+          <h2 className="mb-3 w-fit border-b-2 border-rojo pb-1 font-titulos tracking-wide text-crema uppercase">Visítanos</h2>
+          <address className='not-italic'>
+            <ul className='space-y-2'>
+              <li>
+                <a href="https://www.google.com/maps/search/?api=1&query=Calle+San+Andr%C3%A9s+128+A+Coru%C3%B1a" target="_blank" rel="noopener noreferrer">
+                  Calle San Andrés, 128 (entrada por calle Picos), 15003 A Coruña
+                </a>
+              </li>
+              <li>
+                <a href="tel:+34981000000">+34 981 00 00 00</a>
+              </li>
+              <li>Lun–Vie: 13:00–16:00 y 20:00–23:30</li>
+              <li>Sáb–Dom: 13:00–00:00</li>
+            </ul>
+          </address>
+        </section>
+        <nav aria-label="Enlaces rápidos">
+          <h2 className="mb-3 w-fit border-b-2 border-rojo pb-1 font-titulos tracking-wide text-crema uppercase">Enlaces rápidos</h2>
+          <ul className='space-y-2'>
+            <li><a href="/">Destacados</a></li>
+            <li><a href="/carta">Carta</a></li>
+            <li><a href="/reservas">Reservas</a></li>
+          </ul>
+        </nav>
+        <section>
+          <h2 className="mb-3 w-fit border-b-2 border-rojo pb-1 font-titulos tracking-wide text-crema uppercase">Síguenos</h2>
+          <ul className='space-y-2'>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </section>
+        <small className='border-t border-crema/20 pt-4 text-center md:col-span-3'>© 2026 Crunna Diner · Negocio ficticio</small>
+      </footer>
     </>
   )
 }
