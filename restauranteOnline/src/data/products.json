@@ -1,0 +1,1134 @@
+[
+  {
+    "id": 1,
+    "nombre": "Nachos con queso y bacon",
+    "descripcion": "Totopos de maíz crujientes gratinados con queso cheddar fundido, bacon y cebollino, con guacamole y salsa de tomate.",
+    "categoria": "Entrantes",
+    "precio": 8.95,
+    "precioOferta": null,
+    "imagen": "nachos.jpg",
+    "destacado": true,
+    "ingredientes": [
+      "totopos de maíz",
+      "queso cheddar",
+      "bacon",
+      "cebollino",
+      "guacamole",
+      "pico de gallo"
+    ],
+    "alergenos": [
+      "lácteos"
+    ],
+    "calorias": 780,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 10,
+    "fotoAutor": "lap lap",
+    "fotoUrl": "https://unsplash.com/photos/nachos-topped-with-melted-cheese-bacon-and-chives-5PkRWJ3ndOw"
+  },
+  {
+    "id": 2,
+    "nombre": "Alitas de pollo buffalo",
+    "descripcion": "Alitas de pollo fritas y bañadas en salsa buffalo picante, servidas con salsa ranch y cebolleta.",
+    "categoria": "Entrantes",
+    "precio": 9.5,
+    "precioOferta": null,
+    "imagen": "alitas-buffalo.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "alitas de pollo",
+      "salsa buffalo",
+      "salsa ranch",
+      "cebolleta"
+    ],
+    "alergenos": [
+      "lácteos",
+      "huevo",
+      "mostaza"
+    ],
+    "calorias": 690,
+    "vegetariano": false,
+    "picante": true,
+    "tiempoPreparacion": 15,
+    "fotoAutor": "Chad Montano",
+    "fotoUrl": "https://unsplash.com/photos/buffalo-chicken-wings-appetizer-gE28aTnlqJA"
+  },
+  {
+    "id": 3,
+    "nombre": "Aros de cebolla",
+    "descripcion": "Aros de cebolla rebozados y fritos, crujientes por fuera y tiernos por dentro, con kétchup.",
+    "categoria": "Entrantes",
+    "precio": 5.95,
+    "precioOferta": null,
+    "imagen": "aros-cebolla.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "cebolla",
+      "rebozado de harina y cerveza",
+      "kétchup"
+    ],
+    "alergenos": [
+      "gluten"
+    ],
+    "calorias": 420,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 8,
+    "fotoAutor": "satria setiawan",
+    "fotoUrl": "https://unsplash.com/photos/a-white-plate-topped-with-onion-rings-next-to-a-bowl-of-ketchup-uu3yWi0XVcQ"
+  },
+  {
+    "id": 4,
+    "nombre": "Palitos de mozzarella",
+    "descripcion": "Palitos de mozzarella empanados con salsa de tomate y albahaca para mojar.",
+    "categoria": "Entrantes",
+    "precio": 6.95,
+    "precioOferta": 5.95,
+    "imagen": "palitos-mozzarella.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "mozzarella",
+      "pan rallado",
+      "salsa de tomate",
+      "albahaca"
+    ],
+    "alergenos": [
+      "gluten",
+      "lácteos",
+      "huevo"
+    ],
+    "calorias": 510,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 8,
+    "fotoAutor": "Ronald Vargas",
+    "fotoUrl": "https://unsplash.com/photos/a-white-plate-topped-with-fried-food-on-top-of-a-table-nRhHYzybDCE"
+  },
+  {
+    "id": 5,
+    "nombre": "Patatas fritas",
+    "descripcion": "Ración de patatas fritas doradas con sal en escamas. Perfectas para compartir.",
+    "categoria": "Entrantes",
+    "precio": 3.95,
+    "precioOferta": null,
+    "imagen": "patatas-fritas.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "patata",
+      "aceite de girasol",
+      "sal en escamas"
+    ],
+    "alergenos": [],
+    "calorias": 365,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 6,
+    "fotoAutor": "Cindy Bartillon",
+    "fotoUrl": "https://unsplash.com/photos/a-pile-of-golden-french-fries-on-a-white-plate--doMDpFipzQ"
+  },
+  {
+    "id": 6,
+    "nombre": "Tiras de pollo crujiente",
+    "descripcion": "Tiras de pechuga de pollo empanadas y crujientes, con salsa barbacoa y salsa de miel y mostaza.",
+    "categoria": "Entrantes",
+    "precio": 8.5,
+    "precioOferta": null,
+    "imagen": "tiras-pollo.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "pechuga de pollo",
+      "empanado de copos de maíz",
+      "salsa barbacoa",
+      "salsa miel y mostaza"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "mostaza"
+    ],
+    "calorias": 620,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 12,
+    "fotoAutor": "logan jeffrey",
+    "fotoUrl": "https://unsplash.com/photos/fried-chicken-on-white-ceramic-plate-Dr3vO9qZs6Y"
+  },
+  {
+    "id": 7,
+    "nombre": "Hamburguesa clásica",
+    "descripcion": "Nuestra hamburguesa de siempre: 180 g de ternera a la parrilla, lechuga, tomate, cebolla y salsa de la casa en pan brioche.",
+    "categoria": "Hamburguesas",
+    "precio": 11.5,
+    "precioOferta": null,
+    "imagen": "hamburguesa-clasica.jpg",
+    "destacado": true,
+    "ingredientes": [
+      "ternera 180 g",
+      "pan brioche",
+      "lechuga",
+      "tomate",
+      "cebolla",
+      "salsa de la casa"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "lácteos",
+      "sésamo"
+    ],
+    "calorias": 820,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 15,
+    "fotoAutor": "amirali mirhashemian",
+    "fotoUrl": "https://unsplash.com/photos/burger-with-lettuce-and-tomatoes-sc5sTPMrVfk"
+  },
+  {
+    "id": 8,
+    "nombre": "Hamburguesa doble queso",
+    "descripcion": "Dos carnes de ternera con doble de queso cheddar fundido, pepinillos y salsa especial.",
+    "categoria": "Hamburguesas",
+    "precio": 13.95,
+    "precioOferta": null,
+    "imagen": "hamburguesa-doble-queso.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "2 carnes de ternera 120 g",
+      "queso cheddar",
+      "pepinillos",
+      "cebolla",
+      "salsa especial",
+      "pan brioche"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "lácteos",
+      "sésamo",
+      "mostaza"
+    ],
+    "calorias": 1090,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 15,
+    "fotoAutor": "amirali mirhashemian",
+    "fotoUrl": "https://unsplash.com/photos/double-patty-cheeseburger-jh5XyK4Rr3Y"
+  },
+  {
+    "id": 9,
+    "nombre": "Hamburguesa completa",
+    "descripcion": "Ternera a la parrilla con queso, lechuga, tomate, cebolla morada y pepinillos. La más completa de la carta.",
+    "categoria": "Hamburguesas",
+    "precio": 12.95,
+    "precioOferta": 10.95,
+    "imagen": "hamburguesa-completa.jpg",
+    "destacado": true,
+    "ingredientes": [
+      "ternera 180 g",
+      "queso",
+      "lechuga",
+      "tomate",
+      "cebolla morada",
+      "pepinillos",
+      "pan brioche"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "lácteos",
+      "sésamo"
+    ],
+    "calorias": 940,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 15,
+    "fotoAutor": "engin akyurt",
+    "fotoUrl": "https://unsplash.com/photos/a-juicy-hamburger-with-lettuce-tomato-onion-and-cheese-gAyHLRfUo5w"
+  },
+  {
+    "id": 10,
+    "nombre": "Hamburguesa vegetal",
+    "descripcion": "Hamburguesa 100 % vegetal de legumbres y verduras, con queso, tomate y lechuga en pan de semillas.",
+    "categoria": "Hamburguesas",
+    "precio": 11.95,
+    "precioOferta": null,
+    "imagen": "hamburguesa-vegetal.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "hamburguesa de legumbres y verduras",
+      "queso",
+      "tomate",
+      "lechuga",
+      "pan de semillas"
+    ],
+    "alergenos": [
+      "gluten",
+      "lácteos",
+      "sésamo",
+      "soja"
+    ],
+    "calorias": 640,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 15,
+    "fotoAutor": "Zoshua Colah",
+    "fotoUrl": "https://unsplash.com/photos/veggie-burger-with-tomato-and-cheese-mBdGdycNse8"
+  },
+  {
+    "id": 11,
+    "nombre": "Hamburguesa de pollo crispy",
+    "descripcion": "Pechuga de pollo crujiente con lechuga, tomate y mayonesa suave en pan brioche.",
+    "categoria": "Hamburguesas",
+    "precio": 11.95,
+    "precioOferta": null,
+    "imagen": "hamburguesa-pollo-crispy.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "pechuga de pollo empanada",
+      "lechuga",
+      "tomate",
+      "mayonesa",
+      "pan brioche"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "lácteos"
+    ],
+    "calorias": 790,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 15,
+    "fotoAutor": "Sultan Abdulrazzaq",
+    "fotoUrl": "https://unsplash.com/photos/UDYjeBwFZf8"
+  },
+  {
+    "id": 12,
+    "nombre": "Hamburguesa gourmet con patatas",
+    "descripcion": "Ternera madurada con cebolla caramelizada, queso de cabra y rúcula. Se sirve con patatas fritas.",
+    "categoria": "Hamburguesas",
+    "precio": 14.95,
+    "precioOferta": null,
+    "imagen": "hamburguesa-gourmet.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "ternera madurada 200 g",
+      "cebolla caramelizada",
+      "queso de cabra",
+      "rúcula",
+      "pan artesano",
+      "patatas fritas"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "lácteos"
+    ],
+    "calorias": 1150,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 18,
+    "fotoAutor": "Diego Arenas de Rodrigo",
+    "fotoUrl": "https://unsplash.com/photos/a-gourmet-burger-with-fries-and-a-knife-B8yVEDvfM2A"
+  },
+  {
+    "id": 13,
+    "nombre": "Club sándwich",
+    "descripcion": "El clásico de tres pisos: pollo a la plancha, bacon, huevo, lechuga, tomate y mayonesa en pan de molde tostado.",
+    "categoria": "Sándwiches",
+    "precio": 9.95,
+    "precioOferta": null,
+    "imagen": "club-sandwich.jpg",
+    "destacado": true,
+    "ingredientes": [
+      "pan de molde",
+      "pollo a la plancha",
+      "bacon",
+      "huevo",
+      "lechuga",
+      "tomate",
+      "mayonesa"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo"
+    ],
+    "calorias": 760,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 10,
+    "fotoAutor": "Nima Naseri",
+    "fotoUrl": "https://unsplash.com/photos/a-cut-in-half-sandwich-sitting-on-top-of-a-white-plate-6UjpUPobTUA"
+  },
+  {
+    "id": 14,
+    "nombre": "Club sándwich con patatas",
+    "descripcion": "Nuestro club sándwich acompañado de una ración de patatas fritas.",
+    "categoria": "Sándwiches",
+    "precio": 11.95,
+    "precioOferta": null,
+    "imagen": "club-sandwich-patatas.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "pan de molde",
+      "pollo a la plancha",
+      "bacon",
+      "huevo",
+      "lechuga",
+      "tomate",
+      "mayonesa",
+      "patatas fritas"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo"
+    ],
+    "calorias": 1080,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 12,
+    "fotoAutor": "Orkun Orcan",
+    "fotoUrl": "https://unsplash.com/photos/a-white-plate-topped-with-a-cut-in-half-sandwich-and-fries-oBWEb-lAI60"
+  },
+  {
+    "id": 15,
+    "nombre": "Wrap de pollo con ensalada",
+    "descripcion": "Tortilla de trigo rellena de pollo, lechuga, tomate y salsa de yogur, con ensalada verde.",
+    "categoria": "Sándwiches",
+    "precio": 8.95,
+    "precioOferta": null,
+    "imagen": "wrap-pollo.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "tortilla de trigo",
+      "pollo",
+      "lechuga",
+      "tomate",
+      "salsa de yogur",
+      "ensalada verde"
+    ],
+    "alergenos": [
+      "gluten",
+      "lácteos"
+    ],
+    "calorias": 540,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 10,
+    "fotoAutor": "Giorgio Trovato",
+    "fotoUrl": "https://unsplash.com/photos/a-wrap-and-salad-on-a-white-plate--KLZWBqfq6c"
+  },
+  {
+    "id": 16,
+    "nombre": "Sándwich de pollo",
+    "descripcion": "Pollo crujiente con lechuga, tomate y mayonesa en pan de sésamo.",
+    "categoria": "Sándwiches",
+    "precio": 8.5,
+    "precioOferta": null,
+    "imagen": "sandwich-pollo.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "pollo empanado",
+      "lechuga",
+      "tomate",
+      "mayonesa",
+      "pan de sésamo"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "sésamo"
+    ],
+    "calorias": 680,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 10,
+    "fotoAutor": "amin ramezani",
+    "fotoUrl": "https://unsplash.com/photos/uo9TFEUwTc0"
+  },
+  {
+    "id": 17,
+    "nombre": "Pizza margarita",
+    "descripcion": "Masa fina con salsa de tomate, mozzarella fresca y albahaca.",
+    "categoria": "Pizza y pasta",
+    "precio": 10.5,
+    "precioOferta": null,
+    "imagen": "pizza-margarita.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "masa de pizza",
+      "salsa de tomate",
+      "mozzarella",
+      "albahaca",
+      "aceite de oliva"
+    ],
+    "alergenos": [
+      "gluten",
+      "lácteos"
+    ],
+    "calorias": 850,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 15,
+    "fotoAutor": "Alfonso Scarpa",
+    "fotoUrl": "https://unsplash.com/photos/a-delicious-pizza-with-mozzarella-tomato-sauce-and-fresh-basil-qPorOVdCFzc"
+  },
+  {
+    "id": 18,
+    "nombre": "Pizza de la casa",
+    "descripcion": "Pizza de la casa con tomate, mozzarella, jamón, champiñones y orégano.",
+    "categoria": "Pizza y pasta",
+    "precio": 12.5,
+    "precioOferta": null,
+    "imagen": "pizza-casa.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "masa de pizza",
+      "salsa de tomate",
+      "mozzarella",
+      "jamón cocido",
+      "champiñones",
+      "orégano"
+    ],
+    "alergenos": [
+      "gluten",
+      "lácteos"
+    ],
+    "calorias": 980,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 15,
+    "fotoAutor": "Aurélien Lemasson-Théobald",
+    "fotoUrl": "https://unsplash.com/photos/round-cooked-pizza-x00CzBt4Dfk"
+  },
+  {
+    "id": 19,
+    "nombre": "Espaguetis carbonara",
+    "descripcion": "Espaguetis con salsa carbonara de huevo, queso parmesano, bacon y pimienta negra.",
+    "categoria": "Pizza y pasta",
+    "precio": 10.95,
+    "precioOferta": null,
+    "imagen": "espaguetis-carbonara.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "espaguetis",
+      "huevo",
+      "parmesano",
+      "bacon",
+      "pimienta negra"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "lácteos"
+    ],
+    "calorias": 870,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 12,
+    "fotoAutor": "Rob Wicks",
+    "fotoUrl": "https://unsplash.com/photos/a-white-plate-topped-with-spaghetti-and-bacon-fDLBn8X_IlU"
+  },
+  {
+    "id": 20,
+    "nombre": "Lasaña de carne",
+    "descripcion": "Lasaña casera de carne gratinada con bechamel y queso.",
+    "categoria": "Pizza y pasta",
+    "precio": 11.5,
+    "precioOferta": null,
+    "imagen": "lasana.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "pasta de lasaña",
+      "carne picada",
+      "salsa de tomate",
+      "bechamel",
+      "queso"
+    ],
+    "alergenos": [
+      "gluten",
+      "lácteos",
+      "huevo"
+    ],
+    "calorias": 760,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 15,
+    "fotoAutor": "Emanuel Ekström",
+    "fotoUrl": "https://unsplash.com/photos/a-white-plate-topped-with-lasagna-covered-in-sauce-flEUTTwGlJQ"
+  },
+  {
+    "id": 21,
+    "nombre": "Ensalada césar",
+    "descripcion": "Lechuga romana, pollo a la plancha, picatostes, parmesano y salsa césar.",
+    "categoria": "Ensaladas",
+    "precio": 10.5,
+    "precioOferta": null,
+    "imagen": "ensalada-cesar.jpg",
+    "destacado": true,
+    "ingredientes": [
+      "lechuga romana",
+      "pollo a la plancha",
+      "picatostes",
+      "parmesano",
+      "salsa césar"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "lácteos",
+      "pescado",
+      "mostaza"
+    ],
+    "calorias": 520,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 8,
+    "fotoAutor": "Cliffer Rebelo",
+    "fotoUrl": "https://unsplash.com/photos/delicious-caesar-salad-is-presented-on-a-table-UdLsLK_KFLw"
+  },
+  {
+    "id": 22,
+    "nombre": "Ensalada mixta",
+    "descripcion": "Ensalada fresca de lechugas variadas, tomate, pepino, zanahoria y vinagreta.",
+    "categoria": "Ensaladas",
+    "precio": 7.95,
+    "precioOferta": null,
+    "imagen": "ensalada-mixta.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "lechugas variadas",
+      "tomate",
+      "pepino",
+      "zanahoria",
+      "vinagreta"
+    ],
+    "alergenos": [
+      "mostaza"
+    ],
+    "calorias": 210,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 5,
+    "fotoAutor": "Tania Melnyczuk",
+    "fotoUrl": "https://unsplash.com/photos/vegetable-salad-on-white-ceramic-plate-xeTv9N2FjXA"
+  },
+  {
+    "id": 23,
+    "nombre": "Poke bowl de pollo",
+    "descripcion": "Bowl de arroz con pollo, aguacate, edamame, maíz, zanahoria y salsa teriyaki.",
+    "categoria": "Ensaladas",
+    "precio": 11.95,
+    "precioOferta": null,
+    "imagen": "poke-pollo.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "arroz",
+      "pollo",
+      "aguacate",
+      "edamame",
+      "maíz",
+      "zanahoria",
+      "salsa teriyaki"
+    ],
+    "alergenos": [
+      "soja",
+      "sésamo",
+      "gluten"
+    ],
+    "calorias": 610,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 10,
+    "fotoAutor": "abdelkader1001",
+    "fotoUrl": "https://unsplash.com/photos/a-colorful-poke-bowl-with-fresh-ingredients-and-chicken-OlHZpma28eU"
+  },
+  {
+    "id": 24,
+    "nombre": "Bowl vegetal",
+    "descripcion": "Bowl de verduras de temporada, garbanzos, aguacate y semillas con aliño de limón.",
+    "categoria": "Ensaladas",
+    "precio": 10.5,
+    "precioOferta": null,
+    "imagen": "bowl-vegetal.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "verduras de temporada",
+      "garbanzos",
+      "aguacate",
+      "semillas",
+      "aliño de limón"
+    ],
+    "alergenos": [
+      "sésamo"
+    ],
+    "calorias": 480,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 8,
+    "fotoAutor": "Andreas Rasmussen",
+    "fotoUrl": "https://unsplash.com/photos/vegetable-salad-in-white-ceramic-bowl-ZwzZ5F_pIBU"
+  },
+  {
+    "id": 25,
+    "nombre": "Quesadilla de pollo",
+    "descripcion": "Tortilla de trigo rellena de pollo, queso fundido y pimientos, con guacamole y crema agria.",
+    "categoria": "Tex-Mex",
+    "precio": 9.5,
+    "precioOferta": null,
+    "imagen": "quesadilla.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "tortilla de trigo",
+      "pollo",
+      "queso",
+      "pimientos",
+      "guacamole",
+      "crema agria"
+    ],
+    "alergenos": [
+      "gluten",
+      "lácteos"
+    ],
+    "calorias": 720,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 12,
+    "fotoAutor": "Benjamin Guardia",
+    "fotoUrl": "https://unsplash.com/photos/a-plate-topped-with-a-quesadilla-cut-in-half-_BW-YmENFcM"
+  },
+  {
+    "id": 26,
+    "nombre": "Burrito con ensalada",
+    "descripcion": "Burrito de ternera, arroz, frijoles y queso, servido con ensalada.",
+    "categoria": "Tex-Mex",
+    "precio": 10.95,
+    "precioOferta": null,
+    "imagen": "burrito.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "tortilla de trigo",
+      "ternera",
+      "arroz",
+      "frijoles",
+      "queso",
+      "ensalada"
+    ],
+    "alergenos": [
+      "gluten",
+      "lácteos"
+    ],
+    "calorias": 890,
+    "vegetariano": false,
+    "picante": true,
+    "tiempoPreparacion": 12,
+    "fotoAutor": "La La",
+    "fotoUrl": "https://unsplash.com/photos/a-plate-with-a-burrito-and-salad-on-it-qYtfN2109Wg"
+  },
+  {
+    "id": 27,
+    "nombre": "Tacos de pollo",
+    "descripcion": "Tres tacos de maíz con pollo marinado, pico de gallo, cilantro y lima.",
+    "categoria": "Tex-Mex",
+    "precio": 9.95,
+    "precioOferta": 8.5,
+    "imagen": "tacos-pollo.jpg",
+    "destacado": true,
+    "ingredientes": [
+      "tortillas de maíz",
+      "pollo marinado",
+      "pico de gallo",
+      "cilantro",
+      "lima"
+    ],
+    "alergenos": [],
+    "calorias": 540,
+    "vegetariano": false,
+    "picante": true,
+    "tiempoPreparacion": 10,
+    "fotoAutor": "Zoshua Colah",
+    "fotoUrl": "https://unsplash.com/photos/chicken-tacos-with-lime-and-salsa-4gfomuxZFys"
+  },
+  {
+    "id": 28,
+    "nombre": "Fajitas de ternera",
+    "descripcion": "Tiras de ternera salteadas con pimientos y cebolla, con tortillas, salsa y guacamole para montar en la mesa.",
+    "categoria": "Tex-Mex",
+    "precio": 13.5,
+    "precioOferta": null,
+    "imagen": "fajitas.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "ternera",
+      "pimientos",
+      "cebolla",
+      "tortillas de trigo",
+      "salsa",
+      "guacamole"
+    ],
+    "alergenos": [
+      "gluten"
+    ],
+    "calorias": 910,
+    "vegetariano": false,
+    "picante": true,
+    "tiempoPreparacion": 15,
+    "fotoAutor": "Oliver Esquivel",
+    "fotoUrl": "https://unsplash.com/photos/hearty-meat-dish-with-corn-and-peppers-served-with-salsa-cNYpbGu_JWg"
+  },
+  {
+    "id": 29,
+    "nombre": "Costillas barbacoa",
+    "descripcion": "Costillas de cerdo asadas a baja temperatura con salsa barbacoa, patatas fritas y ensalada.",
+    "categoria": "Principales",
+    "precio": 15.95,
+    "precioOferta": null,
+    "imagen": "costillas-bbq.jpg",
+    "destacado": true,
+    "ingredientes": [
+      "costillas de cerdo",
+      "salsa barbacoa",
+      "patatas fritas",
+      "ensalada"
+    ],
+    "alergenos": [
+      "mostaza",
+      "apio"
+    ],
+    "calorias": 1250,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 20,
+    "fotoAutor": "Hoai Nam Mai",
+    "fotoUrl": "https://unsplash.com/photos/barbecued-ribs-with-french-fries-and-salad-22ZfkYDJDpw"
+  },
+  {
+    "id": 30,
+    "nombre": "Entrecot con patatas",
+    "descripcion": "Entrecot de ternera a la parrilla (250 g) con patatas fritas y ensalada.",
+    "categoria": "Principales",
+    "precio": 18.95,
+    "precioOferta": null,
+    "imagen": "entrecot.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "entrecot de ternera 250 g",
+      "patatas fritas",
+      "ensalada"
+    ],
+    "alergenos": [],
+    "calorias": 1020,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 20,
+    "fotoAutor": "meat Adil",
+    "fotoUrl": "https://unsplash.com/photos/a-perfectly-cooked-steak-with-fries-and-salad-d5EjL94rhZ0"
+  },
+  {
+    "id": 31,
+    "nombre": "Salmón con brócoli",
+    "descripcion": "Lomo de salmón a la plancha con brócoli salteado y limón.",
+    "categoria": "Principales",
+    "precio": 16.5,
+    "precioOferta": null,
+    "imagen": "salmon.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "salmón",
+      "brócoli",
+      "limón",
+      "aceite de oliva"
+    ],
+    "alergenos": [
+      "pescado"
+    ],
+    "calorias": 560,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 15,
+    "fotoAutor": "Camara Negra",
+    "fotoUrl": "https://unsplash.com/photos/a-black-plate-topped-with-salmon-and-broccoli-RZV1-tNbHy4"
+  },
+  {
+    "id": 32,
+    "nombre": "Pollo frito",
+    "descripcion": "Piezas de pollo frito al estilo americano, crujientes y especiadas.",
+    "categoria": "Principales",
+    "precio": 12.5,
+    "precioOferta": null,
+    "imagen": "pollo-frito.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "pollo",
+      "rebozado especiado"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo"
+    ],
+    "calorias": 880,
+    "vegetariano": false,
+    "picante": false,
+    "tiempoPreparacion": 18,
+    "fotoAutor": "Scott Eckersley",
+    "fotoUrl": "https://unsplash.com/photos/fried-chicken-on-black-plate-R-7_ErUOLxw"
+  },
+  {
+    "id": 33,
+    "nombre": "Tortitas",
+    "descripcion": "Torre de tortitas esponjosas con mantequilla y sirope de arce. Nuestro postre estrella.",
+    "categoria": "Postres",
+    "precio": 6.5,
+    "precioOferta": null,
+    "imagen": "tortitas.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "tortitas",
+      "mantequilla",
+      "sirope de arce"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "lácteos"
+    ],
+    "calorias": 620,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 8,
+    "fotoAutor": "Sebastian Schuster",
+    "fotoUrl": "https://unsplash.com/photos/a-tall-stack-of-golden-brown-pancakes-on-a-plate-vfl6y292kSI"
+  },
+  {
+    "id": 34,
+    "nombre": "Tortitas con frutos rojos",
+    "descripcion": "Tortitas con frutos rojos frescos, nata y sirope.",
+    "categoria": "Postres",
+    "precio": 7.5,
+    "precioOferta": null,
+    "imagen": "tortitas-frutos-rojos.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "tortitas",
+      "fresas",
+      "arándanos",
+      "frambuesas",
+      "nata",
+      "sirope"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "lácteos"
+    ],
+    "calorias": 680,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 8,
+    "fotoAutor": "Jaqueline Pelzer",
+    "fotoUrl": "https://unsplash.com/photos/pancakes-with-berries-on-white-ceramic-plate-MytHEJlzdcM"
+  },
+  {
+    "id": 35,
+    "nombre": "Brownie con helado",
+    "descripcion": "Brownie de chocolate templado con una bola de helado de vainilla.",
+    "categoria": "Postres",
+    "precio": 6.95,
+    "precioOferta": null,
+    "imagen": "brownie-helado.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "brownie de chocolate",
+      "helado de vainilla",
+      "nueces"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "lácteos",
+      "frutos de cáscara"
+    ],
+    "calorias": 590,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 5,
+    "fotoAutor": "Junel Mujar",
+    "fotoUrl": "https://unsplash.com/photos/chocolate-cake-with-white-ice-cream-on-white-ceramic-plate-Wq0tcKzIa0M"
+  },
+  {
+    "id": 36,
+    "nombre": "Tarta de queso",
+    "descripcion": "Tarta de queso cremosa al horno sobre base de galleta.",
+    "categoria": "Postres",
+    "precio": 6.5,
+    "precioOferta": null,
+    "imagen": "tarta-queso.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "queso crema",
+      "huevo",
+      "nata",
+      "base de galleta"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "lácteos"
+    ],
+    "calorias": 480,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 3,
+    "fotoAutor": "Med Wael Laraiedh",
+    "fotoUrl": "https://unsplash.com/photos/a-piece-of-cheesecake-on-a-white-plate-hszGPnZGB3A"
+  },
+  {
+    "id": 37,
+    "nombre": "Tarta de queso con arándanos",
+    "descripcion": "Tarta de queso con cobertura de arándanos.",
+    "categoria": "Postres",
+    "precio": 6.95,
+    "precioOferta": 5.95,
+    "imagen": "tarta-queso-arandanos.jpg",
+    "destacado": true,
+    "ingredientes": [
+      "queso crema",
+      "huevo",
+      "nata",
+      "base de galleta",
+      "arándanos"
+    ],
+    "alergenos": [
+      "gluten",
+      "huevo",
+      "lácteos"
+    ],
+    "calorias": 510,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 3,
+    "fotoAutor": "Kelsey Todd",
+    "fotoUrl": "https://unsplash.com/photos/a-piece-of-cheesecake-with-blueberries-on-a-plate-nXsFPNyBqq4"
+  },
+  {
+    "id": 38,
+    "nombre": "Batido de fresa",
+    "descripcion": "Batido cremoso de fresa con helado de vainilla.",
+    "categoria": "Bebidas",
+    "precio": 4.95,
+    "precioOferta": null,
+    "imagen": "batido-fresa.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "leche",
+      "fresas",
+      "helado de vainilla"
+    ],
+    "alergenos": [
+      "lácteos"
+    ],
+    "calorias": 420,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 4,
+    "fotoAutor": "Sebastian Coman Photography",
+    "fotoUrl": "https://unsplash.com/photos/strawberry-shake-in-clear-drinking-glass-rwBJaJdesGg"
+  },
+  {
+    "id": 39,
+    "nombre": "Batido especial con nata",
+    "descripcion": "Batido de chocolate con nata montada y toppings de caramelo.",
+    "categoria": "Bebidas",
+    "precio": 5.95,
+    "precioOferta": null,
+    "imagen": "batido-especial.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "leche",
+      "helado de chocolate",
+      "nata",
+      "toppings de caramelo"
+    ],
+    "alergenos": [
+      "lácteos",
+      "gluten"
+    ],
+    "calorias": 610,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 5,
+    "fotoAutor": "Pranav Kumar Jain",
+    "fotoUrl": "https://unsplash.com/photos/a-milkshake-topped-with-whipped-cream-and-candy-l74h63Dgv3I"
+  },
+  {
+    "id": 40,
+    "nombre": "Limonada casera",
+    "descripcion": "Limonada casera con limón exprimido, hierbabuena y hielo.",
+    "categoria": "Bebidas",
+    "precio": 3.5,
+    "precioOferta": null,
+    "imagen": "limonada.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "limón",
+      "azúcar",
+      "hierbabuena",
+      "agua",
+      "hielo"
+    ],
+    "alergenos": [],
+    "calorias": 120,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 3,
+    "fotoAutor": "Laura Chouette",
+    "fotoUrl": "https://unsplash.com/photos/clear-drinking-glass-with-lemon-juice-TecD-1MTMiE"
+  },
+  {
+    "id": 41,
+    "nombre": "Smoothie verde",
+    "descripcion": "Smoothie de espinaca, manzana, kiwi y plátano.",
+    "categoria": "Bebidas",
+    "precio": 4.5,
+    "precioOferta": null,
+    "imagen": "smoothie-verde.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "espinaca",
+      "manzana",
+      "kiwi",
+      "plátano"
+    ],
+    "alergenos": [],
+    "calorias": 180,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 4,
+    "fotoAutor": "Giorgi Iremadze",
+    "fotoUrl": "https://unsplash.com/photos/green-liquid-in-clear-drinking-glass-with-straw-3OV0ft7mG_o"
+  },
+  {
+    "id": 42,
+    "nombre": "Café helado",
+    "descripcion": "Café espresso con leche fría y hielo.",
+    "categoria": "Bebidas",
+    "precio": 3.25,
+    "precioOferta": null,
+    "imagen": "cafe-helado.jpg",
+    "destacado": false,
+    "ingredientes": [
+      "café espresso",
+      "leche",
+      "hielo"
+    ],
+    "alergenos": [
+      "lácteos"
+    ],
+    "calorias": 110,
+    "vegetariano": true,
+    "picante": false,
+    "tiempoPreparacion": 3,
+    "fotoAutor": "Seungmin Yoon",
+    "fotoUrl": "https://unsplash.com/photos/iced-coffee-with-cream-and-straw-on-wooden-table-0ix19Sp9K7g"
+  }
+]

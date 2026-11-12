@@ -128,9 +128,10 @@ npm run preview   # sirve dist/ en http://localhost:4173/ para probarla
 ## Estructura del proyecto
 
 ```
-├── public/
-│   └── images/              # Fotos de los platos (nachos.jpg, burrito.jpg...)
 ├── src/
+│   ├── assets/
+│   │   ├── imgLogos/        # Logos de Crunna Diner
+│   │   └── imgPlatos/       # Fotos de los platos (nachos.jpg, burrito.jpg...)
 │   ├── components/          # Componentes reutilizables
 │   │   ├── Layout.tsx       # Cabecera + página actual + pie
 │   │   ├── Header.tsx
@@ -156,6 +157,8 @@ npm run preview   # sirve dist/ en http://localhost:4173/ para probarla
 │   │   └── NotFoundPage.tsx
 │   ├── types/
 │   │   └── product.ts       # Interfaz Product y tipo Categoria
+│   ├── utils/
+│   │   └── imagenPlato.ts   # Convierte "nachos.jpg" en la URL real de la foto
 │   ├── App.tsx              # Definición de las rutas
 │   ├── main.tsx             # Punto de entrada
 │   └── index.css            # Estilos globales
@@ -180,7 +183,7 @@ export interface Product {
   categoria: Categoria;          // 'Entrantes' | 'Hamburguesas' | ...
   precio: number;
   precioOferta: number | null;   // precio rebajado, o null si no está en oferta
-  imagen: string;                // ruta dentro de public, p. ej. "/images/nachos.jpg"
+  imagen: string;                // fichero en src/assets/imgPlatos, p. ej. "nachos.jpg"
   destacado: boolean;            // se muestra en la página de inicio
   ingredientes: string[];
   alergenos: string[];
@@ -193,9 +196,9 @@ export interface Product {
 }
 ```
 
-Las imágenes están en `public/images/`. Vite sirve esa carpeta en la raíz de la web, por eso en el JSON las rutas empiezan por `/images/...`.
+Las imágenes están en `src/assets/imgPlatos/`. En el JSON solo se guarda el **nombre del fichero** (`"nachos.jpg"`); la función `imagenPlato()` de `src/utils/imagenPlato.ts` lo convierte en la URL real que genera Vite al empaquetar.
 
-Para **añadir un plato** basta con añadir un objeto nuevo al JSON (con un `id` que no se repita) y copiar su foto en `public/images/`.
+Para **añadir un plato** basta con añadir un objeto nuevo al JSON (con un `id` que no se repita) y copiar su foto en `src/assets/imgPlatos/`.
 
 ---
 
