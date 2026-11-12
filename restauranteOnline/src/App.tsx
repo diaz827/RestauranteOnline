@@ -1,6 +1,7 @@
 import logo from './assets/imgLogos/logo.png'
 import { LuShoppingCart, LuMenu, LuSearch, LuMapPin, LuPhone, LuClock } from 'react-icons/lu'
 import { FaInstagram, FaFacebook, FaTiktok, FaLinkedin } from 'react-icons/fa'
+import { SiVisa, SiMastercard, SiAmericanexpress, SiPaypal, SiApplepay, SiGooglepay, SiRevolut } from 'react-icons/si'
 import { useState } from 'react'
 
 function App() {
@@ -149,6 +150,18 @@ function App() {
                 <FaLinkedin aria-hidden="true" className="h-5 w-5" />
               </a>
             </li>
+          </ul>
+        </section>
+        <section className="md:col-span-3">
+          <h2 className="sr-only">Métodos de pago</h2>
+          <ul className="flex flex-wrap items-center justify-center gap-10 text-crema/80">
+            <li><SiVisa aria-label="Visa" role="img" className="h-6 w-auto" /></li>
+            <li><SiMastercard aria-label="Mastercard" role="img" className="h-6 w-auto" /></li>
+            <li><SiAmericanexpress aria-label="American Express" role="img" className="h-6 w-auto" /></li>
+            <li><SiPaypal aria-label="PayPal" role="img" className="h-6 w-auto" /></li>
+            <li><SiApplepay aria-label="Apple Pay" role="img" className="h-6 w-auto" /></li>
+            <li><SiGooglepay aria-label="Google Pay" role="img" className="h-6 w-auto" /></li>
+            <li><SiRevolut aria-label="Revolut" role="img" className="h-6 w-auto" /></li>
           </ul>
         </section>
         <small className='border-t border-crema/20 pt-4 text-center md:col-span-3'>© 2026 Crunna Diner · Negocio ficticio</small>
