@@ -47,7 +47,7 @@ Los datos se cargan desde un fichero JSON, así que la carta se puede ampliar o 
 
 | Página | Ruta | Qué se puede hacer |
 |---|---|---|
-| Inicio | `/` | Ver el banner principal, una descripción de la tienda, los **platos destacados** y la información de contacto (dirección con enlace al mapa, teléfono y horario ficticios, y redes sociales). |
+| Inicio | `/` | Ver el banner principal, una descripción de la tienda, los **platos destacados** y la información de contacto (dirección real con enlace al mapa, teléfono y horario ficticios, y redes sociales). |
 | Carta | `/carta` | Ver toda la carta en una rejilla **paginada** y **buscar** platos: se escribe un texto, se pulsa *Buscar* y aparecen los platos que lo contienen en su **nombre o descripción**. |
 | Detalle | `/carta/:id` | Ver la foto, el nombre, el precio (con el precio de oferta si lo tiene), la descripción y el resto de datos: categoría, ingredientes, alérgenos, calorías, tiempo de preparación y si es vegetariano o picante. Botón **Añadir al carrito**. |
 | Carrito | `/carrito` | Ver los platos añadidos, **aumentar o disminuir la cantidad** de cada uno, **eliminar** un plato y **vaciar** el carrito (las dos acciones piden **confirmación**) y ver el **precio total**. |

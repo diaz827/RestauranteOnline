@@ -1,5 +1,6 @@
 import logo from './assets/imgLogos/logo.png'
-import { LuShoppingCart, LuMenu, LuSearch } from 'react-icons/lu'
+import { LuShoppingCart, LuMenu, LuSearch, LuMapPin, LuPhone, LuClock } from 'react-icons/lu'
+import { FaInstagram, FaFacebook, FaTiktok, FaLinkedin } from 'react-icons/fa'
 import { useState } from 'react'
 
 function App() {
@@ -80,16 +81,24 @@ function App() {
           <h2 className="mb-3 w-fit border-b-2 border-rojo pb-1 font-titulos tracking-wide text-crema uppercase">Visítanos</h2>
           <address className='not-italic'>
             <ul className='space-y-2'>
-              <li>
+              <li className="flex items-start gap-3">
+                <LuMapPin aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-rojo" />
                 <a href="https://www.google.com/maps/search/?api=1&query=Calle+San+Andr%C3%A9s+128+A+Coru%C3%B1a" target="_blank" rel="noopener noreferrer">
                   Calle San Andrés, 128 (entrada por calle Picos), 15003 A Coruña
                 </a>
               </li>
-              <li>
+              <li className="flex items-start gap-3">
+                <LuPhone aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-rojo" />
                 <a href="tel:+34981000000">+34 981 00 00 00</a>
               </li>
-              <li>Lun–Vie: 13:00–16:00 y 20:00–23:30</li>
-              <li>Sáb–Dom: 13:00–00:00</li>
+              <li className="flex items-start gap-3">
+                <LuClock aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-rojo" />
+                <span>
+                  Lun–Vie: 13:00–16:00 y 20:00–23:30
+                  <br />
+                  Sáb–Dom: 13:00–00:00
+                </span>
+              </li>
             </ul>
           </address>
         </section>
@@ -103,11 +112,43 @@ function App() {
         </nav>
         <section>
           <h2 className="mb-3 w-fit border-b-2 border-rojo pb-1 font-titulos tracking-wide text-crema uppercase">Síguenos</h2>
-          <ul className='space-y-2'>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">TikTok</a></li>
-            <li><a href="#">LinkedIn</a></li>
+          <ul className="flex gap-3">
+            <li>
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
+              >
+                <FaInstagram aria-hidden="true" className="h-5 w-5" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                aria-label="Facebook"
+                className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
+              >
+                <FaFacebook aria-hidden="true" className="h-5 w-5" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                aria-label="Tiktok"
+                className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
+              >
+                <FaTiktok aria-hidden="true" className="h-5 w-5" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                aria-label="Linkedin"
+                className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
+              >
+                <FaLinkedin aria-hidden="true" className="h-5 w-5" />
+              </a>
+            </li>
           </ul>
         </section>
         <small className='border-t border-crema/20 pt-4 text-center md:col-span-3'>© 2026 Crunna Diner · Negocio ficticio</small>
