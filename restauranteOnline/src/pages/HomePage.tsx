@@ -1,5 +1,10 @@
 import heroEscritorio from '../assets/imgBanner/hero-escritorio.webp'
 import heroMovil from '../assets/imgBanner/hero-movil.webp'
+import ProductCard from '../components/ProductCard'
+import productos from '../data/products.json'
+import type { Product } from '../types/product'
+
+const platos = productos as Product[]
 
 function HomePage() {
     return (
@@ -27,6 +32,10 @@ function HomePage() {
                         Ver carta
                     </a>
                 </article>
+            </section>
+            <section className="mx-auto grid max-w-2xl grid-cols-2 gap-4 p-4">
+                <ProductCard plato={platos[0]} />
+                <ProductCard plato={platos[8]} />
             </section>
         </main>
     )
