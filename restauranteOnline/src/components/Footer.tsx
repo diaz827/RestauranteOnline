@@ -43,7 +43,9 @@ function Footer() {
                 <ul className="flex gap-3">
                     <li>
                         <a
-                            href="#"
+                            href="https://www.instagram.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             aria-label="Instagram"
                             className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
                         >
@@ -52,7 +54,9 @@ function Footer() {
                     </li>
                     <li>
                         <a
-                            href="#"
+                            href="https://www.facebook.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             aria-label="Facebook"
                             className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
                         >
@@ -61,8 +65,10 @@ function Footer() {
                     </li>
                     <li>
                         <a
-                            href="#"
-                            aria-label="Tiktok"
+                            href="https://www.tiktok.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="TikTok"
                             className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
                         >
                             <FaTiktok aria-hidden="true" className="h-5 w-5" />
@@ -70,8 +76,10 @@ function Footer() {
                     </li>
                     <li>
                         <a
-                            href="#"
-                            aria-label="Linkedin"
+                            href="https://www.linkedin.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
                             className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
                         >
                             <FaLinkedin aria-hidden="true" className="h-5 w-5" />

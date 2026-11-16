@@ -3,6 +3,7 @@ import heroMovil from '../assets/imgBanner/hero-movil.webp'
 import ProductCard from '../components/ProductCard'
 import productos from '../data/products.json'
 import type { Product } from '../types/product'
+import { LuMapPin, LuClock } from 'react-icons/lu'
 
 const platos = productos as Product[]
 const destacados = platos.filter((plato) => plato.destacado)
@@ -63,7 +64,7 @@ function HomePage() {
                     title="Mapa con la ubicación de Crunna Diner en Calle San Andrés, A Coruña"
                     src="https://maps.google.com/maps?q=Calle+San+Andr%C3%A9s+128+A+Coru%C3%B1a&output=embed"
                     loading="lazy"
-                    className="h-72 w-full rounded-xl border border-borde md:h-96"
+                    className="h-72 w-full rounded-xl border border-borde md:row-span-2 md:h-full md:min-h-96"
                 />
                 <article>
                     <h3 className="mb-2 font-titulos text-xl font-semibold text-rojo">Nuestra historia</h3>
@@ -71,9 +72,35 @@ function HomePage() {
                         Crunna Diner es un restaurante ficticio de cocina americana inspirado en A Coruña y en la leyenda de Gerión, el gigante al que Hércules venció y sobre cuya tumba levantó la Torre.
                     </p>
                     <p>
-                        De ahí viene lo de «comida de gigantes»: platos generosos, producto fresco y buen ambiente para comer en familia o con amigos.
+                        De ahí sale nuestro eslogan «comida de gigantes»: platos generosos, producto fresco y buen ambiente para comer en familia o con amigos.
                     </p>
                 </article>
+                <section aria-labelledby="titulo-ubicacion">
+                    <h3 id="titulo-ubicacion" className="mb-3 font-titulos text-2xl font-semibold text-rojo">
+                        Ubicación y horarios
+                    </h3>
+                    <address className="mb-4 flex items-start gap-3 text-lg not-italic">
+                        <LuMapPin aria-hidden="true" className="mt-1.5 h-5 w-5 shrink-0 text-rojo" />
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=Calle+San+Andr%C3%A9s+128+A+Coru%C3%B1a"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline decoration-rojo underline-offset-4 hover:text-rojo"
+                        >
+                            Calle San Andrés, 128 (entrada por calle Picos), 15003 A Coruña
+                        </a>
+                    </address>
+                    <p className="mb-1 flex items-center gap-3 text-lg font-bold">
+                        <LuClock aria-hidden="true" className="h-5 w-5 shrink-0 text-rojo" />
+                        Horario
+                    </p>
+                    <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 pl-8 text-lg">
+                        <dt>Lunes a viernes</dt>
+                        <dd>13:00–16:00 y 20:00–23:30</dd>
+                        <dt>Sábado y domingo</dt>
+                        <dd>13:00–00:00</dd>
+                    </dl>
+                </section>
             </section>
         </main>
     )
