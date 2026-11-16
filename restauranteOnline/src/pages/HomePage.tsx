@@ -5,6 +5,7 @@ import productos from '../data/products.json'
 import type { Product } from '../types/product'
 
 const platos = productos as Product[]
+const destacados = platos.filter((plato) => plato.destacado)
 
 function HomePage() {
     return (
@@ -33,9 +34,20 @@ function HomePage() {
                     </a>
                 </article>
             </section>
-            <section className="mx-auto grid max-w-2xl grid-cols-2 gap-4 p-4">
-                <ProductCard plato={platos[0]} />
-                <ProductCard plato={platos[8]} />
+            <section aria-labelledby="titulo-destacados" className="mx-auto max-w-6xl px-4 py-10">
+                <h2
+                    id="titulo-destacados"
+                    className="mb-6 w-fit border-b-4 border-rojo pb-1 font-titulos text-[26px] font-semibold"
+                >
+                    Platos destacados
+                </h2>
+                <ul className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+                    {destacados.map((plato) => (
+                        <li key={plato.id}>
+                            <ProductCard plato={plato} />
+                        </li>
+                    ))}
+                </ul>
             </section>
         </main>
     )

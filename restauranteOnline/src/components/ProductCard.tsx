@@ -8,7 +8,7 @@ interface ProductCardProps {
 
 function ProductCard({ plato }: ProductCardProps) {
   return (
-    <article className="relative overflow-hidden rounded-xl border border-borde bg-white text-center">
+    <article className="relative flex h-full flex-col overflow-hidden rounded-xl border border-borde bg-white text-center">
       <img
         src={imagenPlato(plato.imagen)}
         alt={plato.nombre}
@@ -25,7 +25,7 @@ function ProductCard({ plato }: ProductCardProps) {
           {plato.precioOferta !== null && <span className="font-bold text-rojo"> · Oferta</span>}
         </p>
       </hgroup>
-      <p className="flex items-center justify-center gap-2 px-4 pt-3 pb-4">
+      <p className="mt-auto flex items-center justify-center gap-2 px-4 pt-3 pb-4">
         {plato.precioOferta !== null && (
           <s className="text-[13px] text-gris">{formatearPrecio(plato.precio)}</s>
         )}
