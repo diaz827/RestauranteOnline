@@ -67,7 +67,7 @@ function HomePage() {
                     className="h-72 w-full rounded-xl border border-borde md:row-span-2 md:h-full md:min-h-96"
                 />
                 <article>
-                    <h3 className="mb-2 font-titulos text-xl font-semibold text-rojo">Nuestra historia</h3>
+                    <h3 className="mb-2 font-titulos text-2xl font-semibold text-rojo">Nuestra historia</h3>
                     <p className="mb-3">
                         Crunna Diner es un restaurante ficticio de cocina americana inspirado en A Coruña y en la leyenda de Gerión, el gigante al que Hércules venció y sobre cuya tumba levantó la Torre.
                     </p>
