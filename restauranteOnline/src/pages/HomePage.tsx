@@ -4,6 +4,7 @@ import ProductCard from '../components/ProductCard'
 import productos from '../data/products.json'
 import type { Product } from '../types/product'
 import { LuMapPin, LuClock } from 'react-icons/lu'
+import { Link } from 'react-router'
 
 const platos = productos as Product[]
 const destacados = platos.filter((plato) => plato.destacado)
@@ -27,12 +28,12 @@ function HomePage() {
                     <p className="mt-2 mb-5">
                         Hamburguesas, pizza, tex-mex y postres con sabor a diner americano, a un paso de la Torre de Hércules.
                     </p>
-                    <a
-                        href="/carta"
+                    <Link
+                        to="/carta"
                         className="inline-block rounded-md bg-rojo px-5 py-3 font-bold tracking-widest text-white uppercase"
                     >
                         Ver carta
-                    </a>
+                    </Link>
                 </article>
             </section>
             <section aria-labelledby="titulo-destacados" className="mx-auto max-w-6xl px-4 py-10">

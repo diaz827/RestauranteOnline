@@ -1,6 +1,10 @@
 import logo from '../assets/imgLogos/logo.png'
 import { LuShoppingCart, LuMenu, LuSearch } from 'react-icons/lu'
 import { useState } from 'react'
+import { Link, NavLink } from 'react-router'
+
+const claseEnlace = ({ isActive }: { isActive: boolean }) =>
+  `block py-2 font-titulos text-crema border-b-2 ${isActive ? 'border-rojo' : 'border-transparent'}`
 
 function Header() {
   const [menuAbierto, setMenuAbierto] = useState(false)
@@ -8,9 +12,9 @@ function Header() {
   return (
     <>
       <header className="relative flex h-28 items-center justify-center bg-negro">
-        <a href="/">
+        <Link to="/">
           <img src={logo} alt="Crunna Diner" className="h-20" />
-        </a>
+        </Link>
         <button
           type="button"
           aria-label='Menú'
@@ -50,28 +54,34 @@ function Header() {
         >
           <LuSearch className="h-6 w-6" aria-hidden="true" />
         </button>
-        <a
-          href='/carrito'
+        <Link
+          to="/carrito"
           aria-label='Carrito'
           className='absolute right-4 flex items-center gap-1 text-crema'
         >
 
           <LuShoppingCart className='h-6 w-6' aria-hidden='true' />
           <span className='rounded-full bg-rojo px-2 text-sm font-bold text-crema'>7</span>
-        </a>
+        </Link>
       </header>
       <nav
         id="menu-principal"
         className={`bg-gris-oscuro border-b-4 border-rojo py-2 ${menuAbierto ? 'block' : 'hidden'} md:block`}>
         <ul className="flex flex-col items-center gap-2 md:flex-row md:justify-center md:gap-20">
           <li>
-            <a href="/" aria-current="page" className='block py-2 font-titulos text-crema border-b-2 border-rojo'>Destacados</a>
+            <NavLink to="/" className={claseEnlace} onClick={() => setMenuAbierto(false)}>
+              Destacados
+            </NavLink>
           </li>
           <li>
-            <a href="/carta" className="block py-2 font-titulos text-crema border-b-2 border-transparent">Carta</a>
+            <NavLink to="/carta" className={claseEnlace} onClick={() => setMenuAbierto(false)}>
+              Carta
+            </NavLink>
           </li>
           <li>
-            <a href="/reservas" className="block py-2 font-titulos text-crema border-b-2 border-transparent">Reservas</a>
+            <NavLink to="/reservas" className={claseEnlace} onClick={() => setMenuAbierto(false)}>
+              Reservas
+            </NavLink>
           </li>
         </ul>
       </nav>

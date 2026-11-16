@@ -1,6 +1,7 @@
 import type { Product } from '../types/product'
 import { imagenPlato } from '../utils/imagenPlato'
 import { formatearPrecio } from '../utils/formatearPrecio'
+import { Link } from 'react-router'
 
 interface ProductCardProps {
   plato: Product
@@ -16,9 +17,9 @@ function ProductCard({ plato }: ProductCardProps) {
       />
       <hgroup className="px-4 pt-4">
         <h3 className="font-titulos text-lg font-medium">
-          <a href={`/carta/${plato.id}`} className="after:absolute after:inset-0">
+          <Link to={`/carta/${plato.id}`} className="after:absolute after:inset-0">
             {plato.nombre}
-          </a>
+          </Link>
         </h3>
         <p className="text-[13px] text-gris">
           {plato.categoria}

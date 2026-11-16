@@ -1,6 +1,7 @@
 import { LuMapPin, LuPhone, LuClock } from 'react-icons/lu'
 import { FaInstagram, FaFacebook, FaTiktok, FaLinkedin } from 'react-icons/fa'
 import { SiVisa, SiMastercard, SiAmericanexpress, SiPaypal, SiApplepay, SiGooglepay, SiRevolut } from 'react-icons/si'
+import { Link } from 'react-router'
 
 function Footer() {
     return (
@@ -33,9 +34,9 @@ function Footer() {
             <nav aria-label="Enlaces rápidos">
                 <h2 className="mb-3 w-fit border-b-2 border-rojo pb-1 font-titulos tracking-wide text-crema uppercase">Enlaces rápidos</h2>
                 <ul className='space-y-2'>
-                    <li><a href="/">Destacados</a></li>
-                    <li><a href="/carta">Carta</a></li>
-                    <li><a href="/reservas">Reservas</a></li>
+                    <li><Link to="/">Destacados</Link></li>
+                    <li><Link to="/carta">Carta</Link></li>
+                    <li><Link to="/reservas">Reservas</Link></li>
                 </ul>
             </nav>
             <section>
