@@ -49,6 +49,32 @@ function HomePage() {
                     ))}
                 </ul>
             </section>
+            <section
+                aria-labelledby="titulo-sobre-nosotros"
+                className="mx-auto grid max-w-6xl gap-6 px-4 pb-12 md:grid-cols-[3fr_2fr]"
+            >
+                <h2
+                    id="titulo-sobre-nosotros"
+                    className="w-fit border-b-4 border-rojo pb-1 font-titulos text-[26px] font-semibold md:col-span-2"
+                >
+                    Sobre nosotros
+                </h2>
+                <iframe
+                    title="Mapa con la ubicación de Crunna Diner en Calle San Andrés, A Coruña"
+                    src="https://maps.google.com/maps?q=Calle+San+Andr%C3%A9s+128+A+Coru%C3%B1a&output=embed"
+                    loading="lazy"
+                    className="h-72 w-full rounded-xl border border-borde md:h-96"
+                />
+                <article>
+                    <h3 className="mb-2 font-titulos text-xl font-semibold text-rojo">Nuestra historia</h3>
+                    <p className="mb-3">
+                        Crunna Diner es un restaurante ficticio de cocina americana inspirado en A Coruña y en la leyenda de Gerión, el gigante al que Hércules venció y sobre cuya tumba levantó la Torre.
+                    </p>
+                    <p>
+                        De ahí viene lo de «comida de gigantes»: platos generosos, producto fresco y buen ambiente para comer en familia o con amigos.
+                    </p>
+                </article>
+            </section>
         </main>
     )
 }
