@@ -1,14 +1,16 @@
-import Header from './components/Header'
+import { Routes, Route } from 'react-router'
+import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
-import Footer from './components/Footer'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
   return (
-    <>
-      <Header />
-      <HomePage />
-      <Footer />
-    </>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   )
 }
 
