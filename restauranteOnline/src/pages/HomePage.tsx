@@ -1,12 +1,9 @@
 import heroEscritorio from '../assets/imgBanner/hero-escritorio.webp'
 import heroMovil from '../assets/imgBanner/hero-movil.webp'
-import ProductCard from '../components/ProductCard'
-import productos from '../data/products.json'
-import type { Product } from '../types/product'
 import { LuMapPin, LuClock } from 'react-icons/lu'
 import { Link } from 'react-router'
-
-const platos = productos as Product[]
+import ProductGrid from '../components/ProductGrid'
+import { platos } from '../data/platos'
 const destacados = platos.filter((plato) => plato.destacado)
 
 function HomePage() {
@@ -43,13 +40,7 @@ function HomePage() {
                 >
                     Platos destacados
                 </h2>
-                <ul className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-                    {destacados.map((plato) => (
-                        <li key={plato.id}>
-                            <ProductCard plato={plato} />
-                        </li>
-                    ))}
-                </ul>
+                <ProductGrid platos={destacados} />
             </section>
             <section
                 aria-labelledby="titulo-sobre-nosotros"

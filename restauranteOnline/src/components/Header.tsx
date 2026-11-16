@@ -59,7 +59,6 @@ function Header() {
           aria-label='Carrito'
           className='absolute right-4 flex items-center gap-1 text-crema'
         >
-
           <LuShoppingCart className='h-6 w-6' aria-hidden='true' />
           <span className='rounded-full bg-rojo px-2 text-sm font-bold text-crema'>7</span>
         </Link>
