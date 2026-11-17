@@ -5,9 +5,9 @@ interface CategoryFilterProps {
   onElegir: (categoria: string) => void
 }
 
-const claseBase = 'rounded-full border px-4 py-2 text-sm font-bold'
-const claseActiva = 'border-negro bg-negro text-white'
-const claseInactiva = 'border-borde bg-white hover:border-negro'
+const claseBase = 'border-b-4 px-1 py-3 font-bold whitespace-nowrap'
+const claseActiva = 'border-rojo text-negro'
+const claseInactiva = 'border-transparent text-gris hover:text-negro'
 
 export default function CategoryFilter({ categoriaActiva, onElegir }: CategoryFilterProps) {
   return (
@@ -15,7 +15,7 @@ export default function CategoryFilter({ categoriaActiva, onElegir }: CategoryFi
       <h2 id="titulo-categorias" className="sr-only">
         Filtrar por categoría
       </h2>
-      <ul className="flex flex-wrap gap-2">
+      <ul className="flex gap-5 overflow-x-auto border-b border-borde [scrollbar-width:none] lg:gap-8">
         <li>
           <button
             type="button"
