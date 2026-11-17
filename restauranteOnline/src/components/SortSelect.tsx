@@ -12,7 +12,7 @@ const opciones = [
 
 export default function SortSelect({ orden, onElegir }: SortSelectProps) {
   return (
-    <label className="mb-6 flex items-center gap-3 md:justify-end">
+    <label className="ml-auto flex items-center gap-3">
       <span className="font-bold">Ordenar por</span>
       <select
         value={orden}

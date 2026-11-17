@@ -6,7 +6,9 @@ import { platos } from '../data/platos'
 import { normalizarTexto } from '../utils/normalizarTexto'
 import SortSelect from '../components/SortSelect'
 import { ordenarPlatos } from '../utils/ordenarPlatos'
+import Pagination from '../components/Pagination'
 
+const PLATOS_POR_PAGINA = 12
 export default function CartaPage() {
   const [parametros, setParametros] = useSearchParams()
   const q = parametros.get('q') ?? ''
@@ -22,6 +24,15 @@ export default function CartaPage() {
     orden,
   )
 
+  const totalPaginas = Math.max(1, Math.ceil(resultados.length / PLATOS_POR_PAGINA))
+  const paginaPedida = Number(parametros.get('page'))
+  const pagina =
+    Number.isInteger(paginaPedida) && paginaPedida >= 1 ? Math.min(paginaPedida, totalPaginas) : 1
+  const platosVisibles = resultados.slice(
+    (pagina - 1) * PLATOS_POR_PAGINA,
+    pagina * PLATOS_POR_PAGINA,
+  )
+
   function cambiarParametro(clave: string, valor: string) {
     const nuevos = new URLSearchParams(parametros)
     if (valor === '') {
@@ -29,7 +40,15 @@ export default function CartaPage() {
     } else {
       nuevos.set(clave, valor)
     }
+    if (clave !== 'page') {
+      nuevos.delete('page')
+    }
     setParametros(nuevos)
+  }
+
+  function cambiarPagina(nueva: number) {
+    cambiarParametro('page', nueva === 1 ? '' : String(nueva))
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const hayFiltros = q !== '' || categoria !== ''
@@ -47,17 +66,19 @@ export default function CartaPage() {
         onElegir={(elegida) => cambiarParametro('categoria', elegida)}
       />
 
-      <SortSelect orden={orden} onElegir={(elegido) => cambiarParametro('orden', elegido)} />
+      <section aria-label="Resultados y orden" className="mb-6 flex flex-wrap items-center gap-3">
+        {hayFiltros && (
+          <p role="status">
+            {resultados.length} {resultados.length === 1 ? 'plato' : 'platos'}
+            {q !== '' && <> para «{q}»</>}{' '}
+            <Link to="/carta" className="font-bold text-rojo underline">
+              Quitar filtros
+            </Link>
+          </p>
+        )}
 
-      {hayFiltros && (
-        <p role="status" className="mb-6">
-          {resultados.length} {resultados.length === 1 ? 'plato' : 'platos'}
-          {q !== '' && <> para «{q}»</>}{' '}
-          <Link to="/carta" className="font-bold text-rojo underline">
-            Quitar filtros
-          </Link>
-        </p>
-      )}
+        <SortSelect orden={orden} onElegir={(elegido) => cambiarParametro('orden', elegido)} />
+      </section>      
 
       {resultados.length === 0 ? (
         <section className="py-12 text-center">
@@ -70,7 +91,10 @@ export default function CartaPage() {
           </Link>
         </section>
       ) : (
-        <ProductGrid platos={resultados} />
+        <>
+          <ProductGrid platos={platosVisibles} />
+          <Pagination paginaActual={pagina} totalPaginas={totalPaginas} onCambiar={cambiarPagina} />
+        </>
       )}
     </main>
   )
