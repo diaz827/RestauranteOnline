@@ -1,7 +1,9 @@
 import logo from '../assets/imgLogos/logo.png'
 import { LuShoppingCart, LuMenu, LuSearch } from 'react-icons/lu'
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router'
+import type { FormEvent } from 'react'
+import { Link, NavLink, useNavigate } from 'react-router'
+
 
 const claseEnlace = ({ isActive }: { isActive: boolean }) =>
   `block py-2 font-titulos text-crema border-b-2 ${isActive ? 'border-rojo' : 'border-transparent'}`
@@ -9,6 +11,20 @@ const claseEnlace = ({ isActive }: { isActive: boolean }) =>
 function Header() {
   const [menuAbierto, setMenuAbierto] = useState(false)
   const [buscadorAbierto, setBuscadorAbierto] = useState(false)
+  const [textoBusqueda, setTextoBusqueda] = useState('')
+  const navegar = useNavigate()
+
+  function buscar(evento: FormEvent<HTMLFormElement>) {
+    evento.preventDefault()
+    const texto = textoBusqueda.trim()
+    if (texto === '') {
+      navegar('/carta')
+    } else {
+      navegar('/carta?' + new URLSearchParams({ q: texto }).toString())
+    }
+    setTextoBusqueda('')
+    setBuscadorAbierto(false)
+  }
   return (
     <>
       <header className="relative flex h-28 items-center justify-center bg-negro">
@@ -31,11 +47,14 @@ function Header() {
         {buscadorAbierto && (
           <form
             role="search"
+            onSubmit={buscar}
             className="absolute top-full left-0 z-10 flex w-full items-center bg-gris-oscuro 
             p-3 md:top-auto md:right-32 md:left-auto md:w-auto md:bg-transparent md:p-0">
             <input
               type="search"
               autoFocus
+              value={textoBusqueda}
+              onChange={(evento)=> setTextoBusqueda(evento.target.value)}
               className="w-full md:w-40 rounded-full border border-borde bg-hueso px-2 py-1 text-sm text-negro"
               placeholder="Buscar..."
               aria-label="Buscar en la carta"
