@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router'
 import { platos } from '../data/platos'
 import { formatearPrecio } from '../utils/formatearPrecio'
 import { imagenPlato } from '../utils/imagenPlato'
+import ProductGrid from '../components/ProductGrid'
 
 export default function ProductDetailPage() {
     const { id } = useParams()
@@ -21,6 +22,10 @@ export default function ProductDetailPage() {
             </main>
         )
     }
+
+    const relacionados = platos
+        .filter((otro) => otro.categoria === plato.categoria && otro.id !== plato.id)
+        .slice(0, 4)
 
     return (
         <main className="mx-auto max-w-6xl px-4 py-8">
@@ -111,6 +116,12 @@ export default function ProductDetailPage() {
                     </section>
                 </section>
             </article>
+            <section aria-labelledby="titulo-relacionados" className="mt-12">
+                <h2 id="titulo-relacionados" className="mb-6 font-titulos text-2xl font-semibold">
+                    Platos relacionados
+                </h2>
+                <ProductGrid platos={relacionados} />
+            </section>
         </main>
     )
 }
