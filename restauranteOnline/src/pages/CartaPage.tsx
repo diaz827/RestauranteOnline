@@ -4,16 +4,22 @@ import ProductGrid from '../components/ProductGrid'
 import SearchBar from '../components/SearchBar'
 import { platos } from '../data/platos'
 import { normalizarTexto } from '../utils/normalizarTexto'
+import SortSelect from '../components/SortSelect'
+import { ordenarPlatos } from '../utils/ordenarPlatos'
 
 export default function CartaPage() {
   const [parametros, setParametros] = useSearchParams()
   const q = parametros.get('q') ?? ''
   const categoria = parametros.get('categoria') ?? ''
+  const orden = parametros.get('orden') ?? ''
 
-  const resultados = platos.filter(
-    (plato) =>
-      normalizarTexto(`${plato.nombre} ${plato.descripcion}`).includes(normalizarTexto(q)) &&
-      (categoria === '' || plato.categoria === categoria),
+  const resultados = ordenarPlatos(
+    platos.filter(
+      (plato) =>
+        normalizarTexto(`${plato.nombre} ${plato.descripcion}`).includes(normalizarTexto(q)) &&
+        (categoria === '' || plato.categoria === categoria),
+    ),
+    orden,
   )
 
   function cambiarParametro(clave: string, valor: string) {
@@ -40,6 +46,8 @@ export default function CartaPage() {
         categoriaActiva={categoria}
         onElegir={(elegida) => cambiarParametro('categoria', elegida)}
       />
+
+      <SortSelect orden={orden} onElegir={(elegido) => cambiarParametro('orden', elegido)} />
 
       {hayFiltros && (
         <p role="status" className="mb-6">
