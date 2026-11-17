@@ -1,4 +1,5 @@
 import { Link, useSearchParams } from 'react-router'
+import CategoryFilter from '../components/CategoryFilter'
 import ProductGrid from '../components/ProductGrid'
 import SearchBar from '../components/SearchBar'
 import { platos } from '../data/platos'
@@ -7,18 +8,25 @@ import { normalizarTexto } from '../utils/normalizarTexto'
 export default function CartaPage() {
   const [parametros, setParametros] = useSearchParams()
   const q = parametros.get('q') ?? ''
+  const categoria = parametros.get('categoria') ?? ''
 
-  const resultados = platos.filter((plato) =>
-    normalizarTexto(`${plato.nombre} ${plato.descripcion}`).includes(normalizarTexto(q)),
+  const resultados = platos.filter(
+    (plato) =>
+      normalizarTexto(`${plato.nombre} ${plato.descripcion}`).includes(normalizarTexto(q)) &&
+      (categoria === '' || plato.categoria === categoria),
   )
 
-  function buscar(texto: string) {
-    if (texto === '') {
-      setParametros({})
+  function cambiarParametro(clave: string, valor: string) {
+    const nuevos = new URLSearchParams(parametros)
+    if (valor === '') {
+      nuevos.delete(clave)
     } else {
-      setParametros({ q: texto })
+      nuevos.set(clave, valor)
     }
+    setParametros(nuevos)
   }
+
+  const hayFiltros = q !== '' || categoria !== ''
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -26,13 +34,19 @@ export default function CartaPage() {
         Nuestra carta
       </h1>
 
-      <SearchBar key={q} valorInicial={q} onBuscar={buscar} />
+      <SearchBar key={q} valorInicial={q} onBuscar={(texto) => cambiarParametro('q', texto)} />
 
-      {q !== '' && (
+      <CategoryFilter
+        categoriaActiva={categoria}
+        onElegir={(elegida) => cambiarParametro('categoria', elegida)}
+      />
+
+      {hayFiltros && (
         <p role="status" className="mb-6">
-          Resultados para «{q}»: {resultados.length} {resultados.length === 1 ? 'plato' : 'platos'}{' '}
+          {resultados.length} {resultados.length === 1 ? 'plato' : 'platos'}
+          {q !== '' && <> para «{q}»</>}{' '}
           <Link to="/carta" className="font-bold text-rojo underline">
-            Limpiar búsqueda
+            Quitar filtros
           </Link>
         </p>
       )}
