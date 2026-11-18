@@ -2,6 +2,7 @@ import { LuMapPin, LuPhone, LuClock } from 'react-icons/lu'
 import { FaInstagram, FaFacebook, FaTiktok, FaLinkedin } from 'react-icons/fa'
 import { SiVisa, SiMastercard, SiAmericanexpress, SiPaypal, SiApplepay, SiGooglepay, SiRevolut } from 'react-icons/si'
 import { Link } from 'react-router'
+import { restaurante } from '../data/restaurante'
 
 function Footer() {
     return (
@@ -12,20 +13,22 @@ function Footer() {
                     <ul className='space-y-2'>
                         <li className="flex items-start gap-3">
                             <LuMapPin aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-rojo" />
-                            <a href="https://www.google.com/maps/search/?api=1&query=Calle+San+Andr%C3%A9s+128+A+Coru%C3%B1a" target="_blank" rel="noopener noreferrer">
-                                Calle San Andrés, 128 (entrada por calle Picos), 15003 A Coruña
+                            <a href={restaurante.mapa} target="_blank" rel="noopener noreferrer">
+                                {restaurante.direccion}
                             </a>
                         </li>
                         <li className="flex items-start gap-3">
                             <LuPhone aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-rojo" />
-                            <a href="tel:+34981000000">+34 981 00 00 00</a>
+                            <a href={restaurante.telefonoEnlace}>{restaurante.telefono}</a>
                         </li>
                         <li className="flex items-start gap-3">
                             <LuClock aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-rojo" />
                             <span>
-                                Lun–Vie: 13:00–16:00 y 20:00–23:30
-                                <br />
-                                Sáb–Dom: 13:00–00:00
+                                {restaurante.horario.map(({ dias, horas }) => (
+                                    <span key={dias} className="block">
+                                        {dias}: {horas}
+                                    </span>
+                                ))}
                             </span>
                         </li>
                     </ul>

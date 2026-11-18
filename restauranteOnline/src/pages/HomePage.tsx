@@ -4,6 +4,8 @@ import { LuMapPin, LuClock } from 'react-icons/lu'
 import { Link } from 'react-router'
 import ProductGrid from '../components/ProductGrid'
 import { platos } from '../data/platos'
+import { restaurante } from '../data/restaurante'
+import { Fragment } from 'react'
 const destacados = platos.filter((plato) => plato.destacado)
 
 function HomePage() {
@@ -54,7 +56,7 @@ function HomePage() {
                 </h2>
                 <iframe
                     title="Mapa con la ubicación de Crunna Diner en Calle San Andrés, A Coruña"
-                    src="https://maps.google.com/maps?q=Calle+San+Andr%C3%A9s+128+A+Coru%C3%B1a&output=embed"
+                    src={restaurante.mapaIncrustado}
                     loading="lazy"
                     className="h-72 w-full rounded-xl border border-borde md:row-span-2 md:h-full md:min-h-96"
                 />
@@ -74,12 +76,12 @@ function HomePage() {
                     <address className="mb-4 flex items-start gap-3 text-lg not-italic">
                         <LuMapPin aria-hidden="true" className="mt-1.5 h-5 w-5 shrink-0 text-rojo" />
                         <a
-                            href="https://www.google.com/maps/search/?api=1&query=Calle+San+Andr%C3%A9s+128+A+Coru%C3%B1a"
+                            href={restaurante.mapa}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="underline decoration-rojo underline-offset-4 hover:text-rojo"
                         >
-                            Calle San Andrés, 128 (entrada por calle Picos), 15003 A Coruña
+                            {restaurante.direccion}
                         </a>
                     </address>
                     <p className="mb-1 flex items-center gap-3 text-lg font-bold">
@@ -87,10 +89,12 @@ function HomePage() {
                         Horario
                     </p>
                     <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 pl-8 text-lg">
-                        <dt>Lunes a viernes</dt>
-                        <dd>13:00–16:00 y 20:00–23:30</dd>
-                        <dt>Sábado y domingo</dt>
-                        <dd>13:00–00:00</dd>
+                        {restaurante.horario.map(({ diasLargo, horas }) => (
+                            <Fragment key={diasLargo}>
+                                <dt>{diasLargo}</dt>
+                                <dd>{horas}</dd>
+                            </Fragment>
+                        ))}
                     </dl>
                 </section>
             </section>
