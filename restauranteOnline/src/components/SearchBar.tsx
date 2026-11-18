@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { platos } from '../data/platos'
 import { normalizarTexto } from '../utils/normalizarTexto'
+import { Link } from 'react-router'
 
 interface SearchBarProps {
   valorInicial: string
@@ -23,12 +24,6 @@ export default function SearchBar({ valorInicial, onBuscar }: SearchBarProps) {
     evento.preventDefault()
     setAbierto(false)
     onBuscar(texto.trim())
-  }
-
-  function elegir(nombre: string) {
-    setTexto(nombre)
-    setAbierto(false)
-    onBuscar(nombre)
   }
 
   return (
@@ -67,13 +62,12 @@ export default function SearchBar({ valorInicial, onBuscar }: SearchBarProps) {
         >
           {sugerencias.map((plato) => (
             <li key={plato.id}>
-              <button
-                type="button"
-                onClick={() => elegir(plato.nombre)}
-                className="w-full px-4 py-2 text-left hover:bg-hueso focus:bg-hueso"
+              <Link
+                to={`/carta/${plato.id}`}
+                className="block w-full px-4 py-2 text-left hover:bg-hueso focus:bg-hueso"
               >
                 {plato.nombre}
-              </button>
+              </Link>
             </li>
           ))}
         </ul>
