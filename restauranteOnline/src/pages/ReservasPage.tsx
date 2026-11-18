@@ -96,6 +96,7 @@ export default function ReservasPage() {
           Reservar mesa
         </h1>
         <p>Reserva tu mesa en Crunna Diner. Te confirmaremos la reserva por correo electrónico.</p>
+        <ReservasInfo modo="ventanas" />
       </header>
 
       <form onSubmit={manejarEnvio} noValidate className="grid gap-8">
@@ -219,7 +220,7 @@ export default function ReservasPage() {
         </button>
       </form>
 
-      <ReservasInfo />
+      <ReservasInfo modo="tarjetas" />
     </main>
   )
 }
