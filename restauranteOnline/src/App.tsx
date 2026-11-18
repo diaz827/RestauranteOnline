@@ -5,6 +5,7 @@ import NotFoundPage from './pages/NotFoundPage'
 import CartaPage from './pages/CartaPage'
 import ProductDetailPage from './pages/ProductDetailPage'
 import CartPage from './pages/CartPage'
+import ReservasPage from './pages/ReservasPage'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="carta" element={<CartaPage />} />
         <Route path="carta/:id" element={<ProductDetailPage />} />
         <Route path="carrito" element={<CartPage />} />
+        <Route path="reservas" element={<ReservasPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
