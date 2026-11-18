@@ -1,10 +1,15 @@
+import { useState } from 'react'
 import { Link } from 'react-router'
 import CartLine from '../components/CartLine'
+import ConfirmDialog from '../components/ConfirmDialog'
 import { useCart } from '../context/CartContext'
+import type { Product } from '../types/product'
 import { formatearPrecio } from '../utils/formatearPrecio'
 
 export default function CartPage() {
-  const { items, totalUnidades, totalPrecio } = useCart()
+  const { items, totalUnidades, totalPrecio, quitar, vaciar } = useCart()
+  const [platoAQuitar, setPlatoAQuitar] = useState<Product | null>(null)
+  const [confirmandoVaciar, setConfirmandoVaciar] = useState(false)
 
   if (items.length === 0) {
     return (
@@ -36,13 +41,22 @@ export default function CartPage() {
         <ul className="flex flex-col gap-4">
           {items.map((item) => (
             <li key={item.plato.id}>
-              <CartLine item={item} />
+              <CartLine item={item} onQuitar={() => setPlatoAQuitar(item.plato)} />
             </li>
           ))}
         </ul>
-        <Link to="/carta" className="mt-6 inline-block font-bold tracking-widest uppercase underline">
-          ← Seguir comprando
-        </Link>
+        <footer className="mt-6 flex flex-wrap items-center justify-between gap-4">
+          <Link to="/carta" className="font-bold tracking-widest uppercase underline">
+            ← Seguir comprando
+          </Link>
+          <button
+            type="button"
+            onClick={() => setConfirmandoVaciar(true)}
+            className="rounded-md border border-negro px-5 py-3 font-bold tracking-widest uppercase"
+          >
+            Vaciar carrito
+          </button>
+        </footer>
       </section>
 
       <aside
@@ -56,6 +70,32 @@ export default function CartPage() {
           Total <span>{formatearPrecio(totalPrecio)}</span>
         </p>
       </aside>
+
+      <ConfirmDialog
+        abierto={platoAQuitar !== null}
+        titulo="¿Eliminar este plato?"
+        texto={platoAQuitar === null ? '' : `Se quitará ${platoAQuitar.nombre} de tu pedido.`}
+        textoConfirmar="Eliminar"
+        onConfirmar={() => {
+          if (platoAQuitar !== null) {
+            quitar(platoAQuitar.id)
+          }
+          setPlatoAQuitar(null)
+        }}
+        onCancelar={() => setPlatoAQuitar(null)}
+      />
+
+      <ConfirmDialog
+        abierto={confirmandoVaciar}
+        titulo="¿Vaciar el carrito?"
+        texto="Se quitarán todos los platos de tu pedido. No se puede deshacer."
+        textoConfirmar="Vaciar"
+        onConfirmar={() => {
+          vaciar()
+          setConfirmandoVaciar(false)
+        }}
+        onCancelar={() => setConfirmandoVaciar(false)}
+      />
     </main>
   )
 }
