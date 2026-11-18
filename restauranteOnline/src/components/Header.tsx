@@ -3,6 +3,7 @@ import { LuShoppingCart, LuMenu, LuSearch } from 'react-icons/lu'
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router'
+import { useCart } from '../context/CartContext'
 
 
 const claseEnlace = ({ isActive }: { isActive: boolean }) =>
@@ -12,6 +13,7 @@ function Header() {
   const [menuAbierto, setMenuAbierto] = useState(false)
   const [buscadorAbierto, setBuscadorAbierto] = useState(false)
   const [textoBusqueda, setTextoBusqueda] = useState('')
+  const { totalUnidades } = useCart()
   const navegar = useNavigate()
 
   function buscar(evento: FormEvent<HTMLFormElement>) {
@@ -54,7 +56,7 @@ function Header() {
               type="search"
               autoFocus
               value={textoBusqueda}
-              onChange={(evento)=> setTextoBusqueda(evento.target.value)}
+              onChange={(evento) => setTextoBusqueda(evento.target.value)}
               className="w-full md:w-40 rounded-full border border-borde bg-hueso px-2 py-1 text-sm text-negro"
               placeholder="Buscar..."
               aria-label="Buscar en la carta"
@@ -75,11 +77,18 @@ function Header() {
         </button>
         <Link
           to="/carrito"
-          aria-label='Carrito'
+          aria-label={`Carrito, ${totalUnidades} ${totalUnidades === 1 ? 'plato' : 'platos'}`}
           className='absolute right-4 flex items-center gap-1 text-crema'
         >
           <LuShoppingCart className='h-6 w-6' aria-hidden='true' />
-          <span className='rounded-full bg-rojo px-2 text-sm font-bold text-crema'>7</span>
+          {totalUnidades > 0 && (
+            <span
+              aria-hidden="true"
+              className='rounded-full bg-rojo px-2 text-sm font-bold text-crema'
+            >
+              {totalUnidades}
+            </span>
+          )}
         </Link>
       </header>
       <nav
