@@ -12,6 +12,7 @@ const destacados = platos.filter((plato) => plato.destacado)
 function HomePage() {
   return (
     <main>
+      <title>Crunna Diner · Comida de gigantes en A Coruña</title>
       <section aria-labelledby="titulo-bienvenida" className="relative">
         <picture>
           <source media="(min-width: 768px)" srcSet={heroEscritorio} />

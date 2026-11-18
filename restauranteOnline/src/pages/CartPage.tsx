@@ -14,6 +14,7 @@ export default function CartPage() {
   if (items.length === 0) {
     return (
       <main className="mx-auto max-w-6xl px-4 py-12 text-center">
+        <title>Carrito vacío · Crunna Diner</title>
         <h1 className="mb-4 font-titulos text-3xl font-semibold">Tu carrito está vacío</h1>
         <p className="mb-6">Aún no has añadido ningún plato.</p>
         <Link
@@ -28,6 +29,7 @@ export default function CartPage() {
 
   return (
     <main className="mx-auto grid max-w-6xl gap-8 px-4 pt-8 lg:grid-cols-[1fr_20rem] lg:pb-8">
+      <title>Tu pedido · Crunna Diner</title>
       <hgroup className="flex items-baseline gap-4 lg:col-span-2">
         <h1 className="w-fit border-b-4 border-rojo pb-1 font-titulos text-3xl font-semibold md:text-[40px]">
           Tu pedido

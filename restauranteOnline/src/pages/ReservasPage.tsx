@@ -91,6 +91,7 @@ export default function ReservasPage() {
 
   return (
     <main className="mx-auto grid max-w-5xl gap-x-12 gap-y-8 px-4 py-8 lg:grid-cols-[1fr_20rem]">
+      <title>Reservar mesa · Crunna Diner</title>
       <header className="lg:col-span-2">
         <h1 className="mb-4 w-fit border-b-4 border-rojo pb-1 font-titulos text-3xl font-semibold md:text-[40px]">
           Reservar mesa

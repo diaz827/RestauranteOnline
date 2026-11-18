@@ -12,6 +12,7 @@ export default function ProductDetailPage() {
   if (plato === undefined) {
     return (
       <main className="mx-auto max-w-6xl px-4 py-12 text-center">
+        <title>Plato no encontrado · Crunna Diner</title>
         <h1 className="mb-4 font-titulos text-3xl font-semibold">Este plato no existe</h1>
         <p className="mb-6">Puede que el enlace esté mal escrito o que el plato ya no esté en la carta.</p>
         <Link
@@ -30,6 +31,7 @@ export default function ProductDetailPage() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
+      <title>{`${plato.nombre} · Crunna Diner`}</title>
       <Link to="/carta" className="mb-6 inline-block font-bold tracking-widest uppercase underline">
         ← Volver a la carta
       </Link>

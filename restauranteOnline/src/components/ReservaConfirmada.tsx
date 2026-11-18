@@ -25,6 +25,7 @@ export default function ReservaConfirmada({ reserva, onNueva }: ReservaConfirmad
 
   return (
     <main className="mx-auto max-w-2xl px-4 py-12">
+      <title>Reserva recibida · Crunna Diner</title>
       <header className="mb-8 text-center">
         <LuCircleCheck className="mx-auto mb-4 h-14 w-14 text-rojo" aria-hidden="true" />
         <h1
