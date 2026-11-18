@@ -46,7 +46,7 @@ export default function SearchBar({ valorInicial, onBuscar }: SearchBarProps) {
         aria-expanded={abierto && sugerencias.length > 0}
         aria-controls="sugerencias-carta"
         placeholder="Buscar un plato..."
-        className="min-w-0 flex-1 rounded-md border border-borde bg-white px-4 py-3"
+        className="min-w-0 flex-1 rounded-md border border-borde bg-white px-4 py-3 placeholder:text-gris"
       />
       <button
         type="submit"

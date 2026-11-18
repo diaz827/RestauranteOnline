@@ -57,7 +57,7 @@ function Header() {
               autoFocus
               value={textoBusqueda}
               onChange={(evento) => setTextoBusqueda(evento.target.value)}
-              className="w-full md:w-40 rounded-full border border-borde bg-hueso px-2 py-1 text-sm text-negro"
+              className="w-full md:w-40 rounded-full border border-borde bg-hueso px-2 py-1 text-sm text-negro placeholder:text-gris"
               placeholder="Buscar..."
               aria-label="Buscar en la carta"
             />
