@@ -6,7 +6,7 @@ const TURNOS_ENTRE_SEMANA: Turno[] = [
   [20 * 60, 22 * 60 + 30],
 ]
 const TURNOS_FIN_DE_SEMANA: Turno[] = [[13 * 60, 23 * 60]]
-const INTERVALO_MINUTOS = 30
+const INTERVALO_MINUTOS = 5
 
 function formatearHora(minutos: number): string {
   const horas = String(Math.floor(minutos / 60)).padStart(2, '0')

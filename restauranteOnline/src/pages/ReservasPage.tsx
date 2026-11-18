@@ -1,18 +1,10 @@
 import { useState } from 'react'
 import type { FormEvent, ReactNode } from 'react'
 import ReservasInfo from '../components/ReservasInfo'
+import type { DatosReserva } from '../types/reserva'
 import { horasDisponibles } from '../utils/horarioReservas'
-
-interface DatosReserva {
-  nombre: string
-  telefono: string
-  email: string
-  fecha: string
-  hora: string
-  comensales: string
-  comentarios: string
-  privacidad: boolean
-}
+import { validarReserva } from '../utils/validarReserva'
+import type { ErroresReserva } from '../utils/validarReserva'
 
 const DATOS_INICIALES: DatosReserva = {
   nombre: '',
@@ -25,22 +17,39 @@ const DATOS_INICIALES: DatosReserva = {
   privacidad: false,
 }
 
-const claseCampo = 'w-full rounded-md border border-borde bg-white px-4 py-3 font-normal'
+const claseCampo = 'w-full rounded-md border bg-white px-4 py-3 font-normal disabled:opacity-50'
 
-function FormField({ etiqueta, children }: { etiqueta: string; children: ReactNode }) {
+interface FormFieldProps {
+  campo: keyof DatosReserva
+  etiqueta: string
+  error?: string
+  children: ReactNode
+}
+
+function FormField({ campo, etiqueta, error, children }: FormFieldProps) {
   return (
-    <label className="grid gap-1 font-bold">
-      {etiqueta}
+    <span className="grid gap-1">
+      <label htmlFor={campo} className="font-bold">
+        {etiqueta}
+      </label>
       {children}
-    </label>
+      {error !== undefined && (
+        <small id={`error-${campo}`} className="font-bold text-rojo">
+          {error}
+        </small>
+      )}
+    </span>
   )
 }
 
 export default function ReservasPage() {
   const [datos, setDatos] = useState<DatosReserva>(DATOS_INICIALES)
+  const [intentado, setIntentado] = useState(false)
+  const [hoy] = useState(() => new Date().toLocaleDateString('sv-SE'))
 
-  const hoy = new Date().toLocaleDateString('sv-SE')
   const horas = horasDisponibles(datos.fecha)
+  const errores: ErroresReserva = intentado ? validarReserva(datos, hoy) : {}
+  const hayErrores = Object.keys(errores).length > 0
 
   function cambiar(campo: keyof DatosReserva, valor: string | boolean) {
     if (campo === 'fecha') {
@@ -50,8 +59,19 @@ export default function ReservasPage() {
     }
   }
 
+  function atributos(campo: keyof DatosReserva) {
+    const hayError = errores[campo] !== undefined
+    return {
+      id: campo,
+      'aria-invalid': hayError,
+      'aria-describedby': hayError ? `error-${campo}` : undefined,
+      className: `${claseCampo} ${hayError ? 'border-rojo' : 'border-borde'}`,
+    }
+  }
+
   function manejarEnvio(evento: FormEvent<HTMLFormElement>) {
     evento.preventDefault()
+    setIntentado(true)
   }
 
   return (
@@ -63,37 +83,37 @@ export default function ReservasPage() {
         <p>Reserva tu mesa en Crunna Diner. Te confirmaremos la reserva por correo electrónico.</p>
       </header>
 
-      <form onSubmit={manejarEnvio} className="grid gap-8">
+      <form onSubmit={manejarEnvio} noValidate className="grid gap-8">
         <fieldset className="grid gap-4">
           <legend className="mb-3 font-titulos text-xl font-semibold">Tus datos</legend>
 
-          <FormField etiqueta="Nombre">
+          <FormField campo="nombre" etiqueta="Nombre" error={errores.nombre}>
             <input
               type="text"
               autoComplete="name"
               value={datos.nombre}
               onChange={(evento) => cambiar('nombre', evento.target.value)}
-              className={claseCampo}
+              {...atributos('nombre')}
             />
           </FormField>
 
-          <FormField etiqueta="Teléfono">
+          <FormField campo="telefono" etiqueta="Teléfono" error={errores.telefono}>
             <input
               type="tel"
               autoComplete="tel"
               value={datos.telefono}
               onChange={(evento) => cambiar('telefono', evento.target.value)}
-              className={claseCampo}
+              {...atributos('telefono')}
             />
           </FormField>
 
-          <FormField etiqueta="Correo electrónico">
+          <FormField campo="email" etiqueta="Correo electrónico" error={errores.email}>
             <input
               type="email"
               autoComplete="email"
               value={datos.email}
               onChange={(evento) => cambiar('email', evento.target.value)}
-              className={claseCampo}
+              {...atributos('email')}
             />
           </FormField>
         </fieldset>
@@ -101,22 +121,22 @@ export default function ReservasPage() {
         <fieldset className="grid gap-4">
           <legend className="mb-3 font-titulos text-xl font-semibold">Tu reserva</legend>
 
-          <FormField etiqueta="Fecha">
+          <FormField campo="fecha" etiqueta="Fecha" error={errores.fecha}>
             <input
               type="date"
               min={hoy}
               value={datos.fecha}
               onChange={(evento) => cambiar('fecha', evento.target.value)}
-              className={claseCampo}
+              {...atributos('fecha')}
             />
           </FormField>
 
-          <FormField etiqueta="Hora">
+          <FormField campo="hora" etiqueta="Hora" error={errores.hora}>
             <select
               value={datos.hora}
               disabled={datos.fecha === ''}
               onChange={(evento) => cambiar('hora', evento.target.value)}
-              className={`${claseCampo} disabled:opacity-50`}
+              {...atributos('hora')}
             >
               <option value="">{datos.fecha === '' ? 'Elige primero la fecha' : 'Elige una hora'}</option>
               {horas.map((hora) => (
@@ -127,11 +147,11 @@ export default function ReservasPage() {
             </select>
           </FormField>
 
-          <FormField etiqueta="Comensales">
+          <FormField campo="comensales" etiqueta="Comensales">
             <select
               value={datos.comensales}
               onChange={(evento) => cambiar('comensales', evento.target.value)}
-              className={claseCampo}
+              {...atributos('comensales')}
             >
               {Array.from({ length: 10 }, (_, indice) => indice + 1).map((numero) => (
                 <option key={numero} value={String(numero)}>
@@ -141,25 +161,40 @@ export default function ReservasPage() {
             </select>
           </FormField>
 
-          <FormField etiqueta="Comentarios (opcional)">
+          <FormField campo="comentarios" etiqueta="Comentarios (opcional)">
             <textarea
               rows={4}
               value={datos.comentarios}
               onChange={(evento) => cambiar('comentarios', evento.target.value)}
-              className={claseCampo}
+              {...atributos('comentarios')}
             />
           </FormField>
         </fieldset>
 
-        <label className="flex items-start gap-3">
-          <input
-            type="checkbox"
-            checked={datos.privacidad}
-            onChange={(evento) => cambiar('privacidad', evento.target.checked)}
-            className="mt-1 h-5 w-5"
-          />
-          <span>Acepto que Crunna Diner use mis datos para gestionar la reserva.</span>
-        </label>
+        <span className="grid gap-1">
+          <label className="flex items-start gap-3">
+            <input
+              type="checkbox"
+              checked={datos.privacidad}
+              onChange={(evento) => cambiar('privacidad', evento.target.checked)}
+              aria-invalid={errores.privacidad !== undefined}
+              aria-describedby={errores.privacidad !== undefined ? 'error-privacidad' : undefined}
+              className="mt-1 h-5 w-5"
+            />
+            <span>Acepto que Crunna Diner use mis datos para gestionar la reserva.</span>
+          </label>
+          {errores.privacidad !== undefined && (
+            <small id="error-privacidad" className="font-bold text-rojo">
+              {errores.privacidad}
+            </small>
+          )}
+        </span>
+
+        {hayErrores && (
+          <p role="alert" className="font-bold text-rojo">
+            Revisa los campos marcados en rojo.
+          </p>
+        )}
 
         <button
           type="submit"
