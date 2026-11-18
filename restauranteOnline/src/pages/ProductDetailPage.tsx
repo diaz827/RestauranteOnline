@@ -3,6 +3,7 @@ import { platos } from '../data/platos'
 import { formatearPrecio } from '../utils/formatearPrecio'
 import { imagenPlato } from '../utils/imagenPlato'
 import ProductGrid from '../components/ProductGrid'
+import AddToCart from '../components/AddToCart'
 
 export default function ProductDetailPage() {
     const { id } = useParams()
@@ -75,6 +76,8 @@ export default function ProductDetailPage() {
                             )}
                         </ul>
                     )}
+
+                    <AddToCart key={plato.id} plato={plato} />
 
                     <section
                         aria-labelledby="titulo-ficha"
