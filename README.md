@@ -23,10 +23,11 @@ La carta tiene **42 platos** repartidos en **9 categorías** (Entrantes, Hamburg
 
 El cliente puede:
 
-- recorrer la carta y ver los platos destacados desde la página de inicio;
-- buscar platos por nombre o descripción;
-- abrir la ficha de un plato para ver todos sus datos;
-- añadir platos al carrito, cambiar sus cantidades y ver el total del pedido.
+- ver los platos destacados desde la página de inicio y recorrer toda la carta;
+- **buscar** platos por nombre o descripción (con sugerencias mientras escribe), **filtrarlos por categoría** y **ordenarlos** por precio o por nombre;
+- abrir la ficha de un plato para ver todos sus datos y otros platos relacionados;
+- añadir platos al carrito, cambiar sus cantidades, eliminarlos o vaciar el carrito, y ver el total del pedido;
+- **reservar mesa** con un formulario validado. La reserva es una **simulación**: no se guarda en ningún sitio y **no se envía ningún correo** (el aviso de confirmación es solo parte de la maqueta).
 
 Los datos se cargan desde un fichero JSON, así que la carta se puede ampliar o cambiar sin tocar el código de las páginas.
 
@@ -39,7 +40,7 @@ Los datos se cargan desde un fichero JSON, así que la carta se puede ampliar o 
 3. [Instalación y configuración](#instalación-y-configuración)
 4. [Estructura del proyecto](#estructura-del-proyecto)
 5. [Datos de los productos](#datos-de-los-productos)
-6. [Créditos de las imágenes](#créditos-de-las-imágenes)
+6. [Créditos y licencias](#créditos-y-licencias)
 
 ---
 
@@ -47,17 +48,19 @@ Los datos se cargan desde un fichero JSON, así que la carta se puede ampliar o 
 
 | Página | Ruta | Qué se puede hacer |
 |---|---|---|
-| Inicio | `/` | Ver el banner principal, una descripción de la tienda, los **platos destacados** y la información de contacto (dirección real con enlace al mapa, teléfono y horario ficticios, y redes sociales). |
-| Carta | `/carta` | Ver toda la carta en una rejilla **paginada** y **buscar** platos: se escribe un texto, se pulsa *Buscar* y aparecen los platos que lo contienen en su **nombre o descripción**. |
-| Detalle | `/carta/:id` | Ver la foto, el nombre, el precio (con el precio de oferta si lo tiene), la descripción y el resto de datos: categoría, ingredientes, alérgenos, calorías, tiempo de preparación y si es vegetariano o picante. Botón **Añadir al carrito**. |
-| Carrito | `/carrito` | Ver los platos añadidos, **aumentar o disminuir la cantidad** de cada uno, **eliminar** un plato y **vaciar** el carrito (las dos acciones piden **confirmación**) y ver el **precio total**. |
+| Inicio | `/` | Ver el banner principal, los **platos destacados** y la sección «Sobre nosotros» con un mapa, la historia del restaurante, la ubicación (dirección real con enlace al mapa) y el horario (ficticio). |
+| Carta | `/carta` | Ver toda la carta en una rejilla de **12 platos por página**, con paginación. Se puede **buscar** por nombre o descripción (al escribir aparecen **sugerencias** que llevan directamente al plato), **filtrar por categoría** y **ordenar** por precio (de menor a mayor o al revés) o por nombre. La búsqueda ignora mayúsculas y tildes. La búsqueda, la categoría, el orden y la página se guardan en la dirección (por ejemplo `/carta?q=pizza&categoria=Postres&orden=precio-asc&page=2`), así que se pueden recargar y compartir. |
+| Detalle | `/carta/:id` | Ver la foto, el nombre, el precio (con el precio de oferta si lo tiene), la descripción y el resto de datos: categoría, ingredientes, alérgenos, calorías, tiempo de preparación y si es vegetariano o picante. Se elige la cantidad y se pulsa **Añadir al carrito**. Debajo aparecen hasta 4 **platos relacionados** de la misma categoría. Si el plato no existe, se muestra el aviso «Este plato no existe». |
+| Carrito | `/carrito` | Ver los platos añadidos, **aumentar o disminuir la cantidad** de cada uno, **eliminar** un plato y **vaciar** el carrito (las dos acciones piden **confirmación**) y ver el **precio total**, que en móvil queda fijo en la parte inferior. Si el carrito está vacío se muestra un aviso con un enlace a la carta. |
+| Reservas | `/reservas` | Reservar mesa con un formulario de **nombre, teléfono, correo, fecha, hora, comensales, comentarios** y aceptación de la privacidad. La **hora** se elige cada 5 minutos según el día (de lunes a viernes de 13:00 a 15:00 y de 20:00 a 22:30; sábados y domingos de 13:00 a 23:00; la última reserva es una hora antes del cierre). Cada campo se **valida** con su mensaje de error. Al enviar, se muestra una **pantalla de confirmación** con el resumen. Es una **simulación**: no se guarda nada ni se envía ningún correo. Un panel lateral muestra el horario, información útil, la nota de privacidad y la ubicación. |
 | No encontrada | `*` | Mensaje de página no encontrada con enlace a la carta. |
 
 Partes comunes a todas las páginas:
 
 - **Cabecera** con el logo, el menú de navegación y el icono del carrito con el número de unidades. En móvil el menú se pliega en un botón ☰.
-- **Pie de página** con la dirección, el teléfono, el horario, enlaces rápidos y redes sociales.
+- **Pie de página** con la dirección, el teléfono, el horario, enlaces rápidos, redes sociales y métodos de pago.
 - **Diseño responsive**, adaptado a móvil, tablet y escritorio.
+- Al cambiar de página, la pantalla vuelve arriba del todo.
 
 ---
 
@@ -68,9 +71,11 @@ Partes comunes a todas las páginas:
 | [React](https://react.dev/) | Librería para construir la interfaz con componentes. |
 | [TypeScript](https://www.typescriptlang.org/) | JavaScript con tipos; los productos se describen con la interfaz `Product`. |
 | [Vite](https://vite.dev/) | Servidor de desarrollo y empaquetado de la aplicación. |
-| [React Router](https://reactrouter.com/) | Navegación entre páginas (`/`, `/carta`, `/carta/:id`, `/carrito`). |
+| [React Router](https://reactrouter.com/) | Navegación entre páginas (`/`, `/carta`, `/carta/:id`, `/carrito`, `/reservas`) y parámetros de la dirección (`?q`, `?categoria`, `?orden`, `?page`). |
 | Context API + `useReducer` | Estado global del carrito, compartido por todas las páginas. |
-| CSS propio (Flexbox y CSS Grid) | Estilos y diseño responsive. |
+| [Tailwind CSS 4](https://tailwindcss.com/) | Estilos y diseño responsive (con una paleta propia definida en `src/index.css`). |
+| [Google Fonts](https://fonts.google.com/) | Tipografías Oswald (títulos) y Lato (texto). |
+| [Oxlint](https://oxc.rs/docs/guide/usage/linter) | Revisión del código (`npm run lint`). |
 | [React Icons](https://react-icons.github.io/react-icons/) | Iconos en SVG: los de interfaz (carrito, lupa, menú ☰) de la colección Lucide, y los logos de redes sociales y métodos de pago de Font Awesome y Simple Icons. |
 | JSON | Fichero `products.json` con los datos de los platos. |
 
@@ -96,9 +101,11 @@ git --version
 ### 2. Descargar el proyecto
 
 ```bash
-git clone https://github.com/diaz827/NOMBRE-DEL-REPOSITORIO.git
-cd NOMBRE-DEL-REPOSITORIO
+git clone https://github.com/diaz827/RestauranteOnline.git
+cd RestauranteOnline/restauranteOnline
 ```
+
+La aplicación está dentro de la carpeta `restauranteOnline`; todos los comandos siguientes se ejecutan desde ella.
 
 ### 3. Instalar las dependencias
 
@@ -106,7 +113,7 @@ cd NOMBRE-DEL-REPOSITORIO
 npm install
 ```
 
-Este comando lee `package.json` y descarga en `node_modules/` las librerías que necesita la aplicación (React, React Router, TypeScript, Vite...). No hace falta configurar nada más: los datos y las imágenes ya están dentro del proyecto.
+Este comando lee `package.json` y descarga en `node_modules/` las librerías que necesita la aplicación (React, React Router, Tailwind CSS, TypeScript, Vite...). No hace falta configurar nada más: los datos y las imágenes ya están dentro del proyecto.
 
 ### 4. Arrancar la aplicación
 
@@ -128,44 +135,67 @@ npm run preview   # sirve dist/ en http://localhost:4173/ para probarla
 ## Estructura del proyecto
 
 ```
-├── src/
-│   ├── assets/
-│   │   ├── imgLogos/        # Logos de Crunna Diner
-│   │   └── imgPlatos/       # Fotos de los platos (nachos.jpg, burrito.jpg...)
-│   ├── components/          # Componentes reutilizables
-│   │   ├── Layout.tsx       # Cabecera + página actual + pie
-│   │   ├── Header.tsx
-│   │   ├── Footer.tsx
-│   │   ├── ProductCard.tsx  # Tarjeta de un plato
-│   │   ├── ProductGrid.tsx  # Rejilla de tarjetas
-│   │   ├── PriceTag.tsx     # Precio normal o tachado + oferta
-│   │   ├── SearchBar.tsx    # Campo de búsqueda + botón Buscar
-│   │   ├── Pagination.tsx
-│   │   ├── QuantitySelector.tsx
-│   │   ├── CartItem.tsx
-│   │   ├── CartSummary.tsx
-│   │   └── ConfirmDialog.tsx  # Diálogo de confirmación
-│   ├── context/
-│   │   └── CartContext.tsx  # Estado global del carrito (useReducer)
-│   ├── data/
-│   │   └── products.json    # Datos de los 42 platos
-│   ├── pages/
-│   │   ├── HomePage.tsx
-│   │   ├── CartaPage.tsx
-│   │   ├── ProductDetailPage.tsx
-│   │   ├── CartPage.tsx
-│   │   └── NotFoundPage.tsx
-│   ├── types/
-│   │   └── product.ts       # Interfaz Product y tipo Categoria
-│   ├── utils/
-│   │   └── imagenPlato.ts   # Convierte "nachos.jpg" en la URL real de la foto
-│   ├── App.tsx              # Definición de las rutas
-│   ├── main.tsx             # Punto de entrada
-│   └── index.css            # Estilos globales
-├── index.html
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
+├── docs/
+│   ├── guiasEstilo/             # Guía de colores, tipografía y componentes
+│   ├── prototipos/              # Prototipo HTML provisional de la página de inicio
+│   └── wireframes/              # Wireframes de cada página (escritorio y móvil)
+├── restauranteOnline/           # La aplicación React (los comandos npm se ejecutan aquí)
+│   ├── public/
+│   │   └── favicon.png
+│   ├── src/
+│   │   ├── assets/
+│   │   │   ├── imgBanner/       # Imágenes del banner de la página de inicio
+│   │   │   ├── imgLogos/        # Logos de Crunna Diner
+│   │   │   └── imgPlatos/       # Fotos de los platos (nachos.jpg, burrito.jpg...)
+│   │   ├── components/          # Componentes reutilizables
+│   │   │   ├── Layout.tsx           # Cabecera + página actual + pie
+│   │   │   ├── ScrollToTop.tsx      # Sube arriba al cambiar de página
+│   │   │   ├── Header.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── ProductCard.tsx      # Tarjeta de un plato
+│   │   │   ├── ProductGrid.tsx      # Rejilla de tarjetas
+│   │   │   ├── SearchBar.tsx        # Buscador con sugerencias
+│   │   │   ├── CategoryFilter.tsx   # Pestañas de categorías
+│   │   │   ├── SortSelect.tsx       # Desplegable de orden
+│   │   │   ├── Pagination.tsx
+│   │   │   ├── QuantitySelector.tsx # Selector de cantidad (– 1 +)
+│   │   │   ├── AddToCart.tsx        # Cantidad + botón Añadir al carrito
+│   │   │   ├── CartLine.tsx         # Una línea del carrito
+│   │   │   ├── ConfirmDialog.tsx    # Diálogo de confirmación
+│   │   │   ├── ReservasInfo.tsx     # Panel de información de Reservas
+│   │   │   └── ReservaConfirmada.tsx # Pantalla de reserva recibida
+│   │   ├── context/
+│   │   │   ├── CartContext.tsx  # Contexto y proveedor del carrito, y hook useCart
+│   │   │   └── cartReducer.ts   # Reducer con las acciones del carrito
+│   │   ├── data/
+│   │   │   ├── products.json    # Datos de los 42 platos
+│   │   │   ├── platos.ts        # Carga el JSON como lista de Product
+│   │   │   ├── categorias.ts    # Lista de las 9 categorías
+│   │   │   └── restaurante.ts   # Dirección, teléfono y horario
+│   │   ├── pages/
+│   │   │   ├── HomePage.tsx
+│   │   │   ├── CartaPage.tsx
+│   │   │   ├── ProductDetailPage.tsx
+│   │   │   ├── CartPage.tsx
+│   │   │   ├── ReservasPage.tsx
+│   │   │   └── NotFoundPage.tsx
+│   │   ├── types/
+│   │   │   ├── product.ts       # Interfaz Product y tipo Categoria
+│   │   │   └── reserva.ts       # Interfaz DatosReserva
+│   │   ├── utils/
+│   │   │   ├── formatearPrecio.ts   # 8.95 → "8,95 €"
+│   │   │   ├── horarioReservas.ts   # Horas disponibles según el día
+│   │   │   ├── imagenPlato.ts       # Convierte "nachos.jpg" en la URL real de la foto
+│   │   │   ├── normalizarTexto.ts   # Quita tildes y mayúsculas para buscar
+│   │   │   ├── ordenarPlatos.ts     # Ordena por precio o nombre
+│   │   │   └── validarReserva.ts    # Reglas de validación de la reserva
+│   │   ├── App.tsx              # Definición de las rutas
+│   │   ├── main.tsx             # Punto de entrada
+│   │   └── index.css            # Estilos globales y paleta (Tailwind)
+│   ├── index.html
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── vite.config.ts
 └── README.md
 ```
 
@@ -198,11 +228,15 @@ export interface Product {
 
 Las imágenes están en `src/assets/imgPlatos/`. En el JSON solo se guarda el **nombre del fichero** (`"nachos.jpg"`); la función `imagenPlato()` de `src/utils/imagenPlato.ts` lo convierte en la URL real que genera Vite al empaquetar.
 
-Para **añadir un plato** basta con añadir un objeto nuevo al JSON (con un `id` que no se repita) y copiar su foto en `src/assets/imgPlatos/`.
+Para **añadir un plato** basta con añadir un objeto nuevo al JSON (con un `id` que no se repita) y copiar su foto en `src/assets/imgPlatos/`. Si el plato es de una categoría nueva, hay que añadirla también al tipo `Categoria` de `src/types/product.ts` y a la lista de `src/data/categorias.ts`.
+
+Los datos de contacto del restaurante (dirección, teléfono y horario) están en `src/data/restaurante.ts`, y de ahí los leen el pie, la página de inicio y la de reservas. Las franjas horarias de las reservas están en `src/utils/horarioReservas.ts`.
 
 ---
 
-## Créditos de las imágenes
+## Créditos y licencias
+
+### Fotos de los platos
 
 Todas las fotos de los platos son de [Unsplash](https://unsplash.com) y se usan bajo la [Licencia Unsplash](https://unsplash.com/license), que permite su uso gratuito sin obligación de atribución. Aun así, se agradece a sus autores:
 
@@ -256,7 +290,27 @@ Todas las fotos de los platos son de [Unsplash](https://unsplash.com) y se usan 
 
 </details>
 
+### Imágenes del banner
+
+Las dos imágenes del banner de la página de inicio (`hero-escritorio.webp` y `hero-movil.webp`, en `src/assets/imgBanner/`) están **generadas con inteligencia artificial**: no son fotografías reales.
+
+### Iconos y logos
+
+- Los iconos de la interfaz (carrito, lupa, menú, papelera...) son de [Lucide](https://lucide.dev/) (licencia ISC), servidos con [React Icons](https://react-icons.github.io/react-icons/).
+- Los logos de redes sociales son de [Font Awesome](https://fontawesome.com/) (licencia CC BY 4.0).
+- Los logos de los métodos de pago son de [Simple Icons](https://simpleicons.org/) (licencia CC0).
+- Los nombres y logos de marcas (Visa, Instagram, PayPal...) pertenecen a sus propietarios y se usan solo de forma ilustrativa.
+
+### Contenido de terceros
+
+- El **mapa** de la página de inicio es un mapa de Google incrustado, que carga contenido de terceros (puede instalar cookies de Google).
+- Las tipografías se cargan desde Google Fonts.
+
+### Qué es ficticio
+
 Los nombres, descripciones, precios, teléfono, horarios y redes del restaurante son ficticios y se han creado solo para este ejercicio. La única excepción es la **ubicación** (Calle San Andrés 128, A Coruña), tomada de un local en alquiler para dar realismo al ejercicio: en ese local no existe ningún restaurante con este nombre.
+
+Las **reservas son una simulación**: el formulario se valida y muestra una confirmación, pero no se guarda ningún dato ni se envía ningún correo. El **carrito** tampoco se guarda: se vacía al recargar la página.
 
 ---
 
