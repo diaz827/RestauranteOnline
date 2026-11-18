@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent, ReactNode } from 'react'
+import ReservaConfirmada from '../components/ReservaConfirmada'
 import ReservasInfo from '../components/ReservasInfo'
 import type { DatosReserva } from '../types/reserva'
 import { horasDisponibles } from '../utils/horarioReservas'
@@ -45,6 +46,7 @@ function FormField({ campo, etiqueta, error, children }: FormFieldProps) {
 export default function ReservasPage() {
   const [datos, setDatos] = useState<DatosReserva>(DATOS_INICIALES)
   const [intentado, setIntentado] = useState(false)
+  const [reservaEnviada, setReservaEnviada] = useState<DatosReserva | null>(null)
   const [hoy] = useState(() => new Date().toLocaleDateString('sv-SE'))
 
   const horas = horasDisponibles(datos.fecha)
@@ -72,6 +74,19 @@ export default function ReservasPage() {
   function manejarEnvio(evento: FormEvent<HTMLFormElement>) {
     evento.preventDefault()
     setIntentado(true)
+    if (Object.keys(validarReserva(datos, hoy)).length === 0) {
+      setReservaEnviada(datos)
+    }
+  }
+
+  function nuevaReserva() {
+    setDatos(DATOS_INICIALES)
+    setIntentado(false)
+    setReservaEnviada(null)
+  }
+
+  if (reservaEnviada !== null) {
+    return <ReservaConfirmada reserva={reservaEnviada} onNueva={nuevaReserva} />
   }
 
   return (
