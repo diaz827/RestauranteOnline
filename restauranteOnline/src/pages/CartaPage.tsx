@@ -1,14 +1,15 @@
 import { Link, useSearchParams } from 'react-router'
 import CategoryFilter from '../components/CategoryFilter'
+import Pagination from '../components/Pagination'
 import ProductGrid from '../components/ProductGrid'
 import SearchBar from '../components/SearchBar'
+import SortSelect from '../components/SortSelect'
 import { platos } from '../data/platos'
 import { normalizarTexto } from '../utils/normalizarTexto'
-import SortSelect from '../components/SortSelect'
 import { ordenarPlatos } from '../utils/ordenarPlatos'
-import Pagination from '../components/Pagination'
 
 const PLATOS_POR_PAGINA = 12
+
 export default function CartaPage() {
   const [parametros, setParametros] = useSearchParams()
   const q = parametros.get('q') ?? ''
@@ -78,7 +79,7 @@ export default function CartaPage() {
         )}
 
         <SortSelect orden={orden} onElegir={(elegido) => cambiarParametro('orden', elegido)} />
-      </section>      
+      </section>
 
       {resultados.length === 0 ? (
         <section className="py-12 text-center">

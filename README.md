@@ -165,8 +165,10 @@ npm run preview   # sirve dist/ en http://localhost:4173/ para probarla
 │   │   │   ├── ReservasInfo.tsx     # Panel de información de Reservas
 │   │   │   └── ReservaConfirmada.tsx # Pantalla de reserva recibida
 │   │   ├── context/
-│   │   │   ├── CartContext.tsx  # Contexto y proveedor del carrito, y hook useCart
-│   │   │   └── cartReducer.ts   # Reducer con las acciones del carrito
+│   │   │   ├── CartContext.tsx      # CartProvider: el proveedor del carrito
+│   │   │   ├── cartContextValue.ts  # El contexto y el tipo de lo que ofrece
+│   │   │   ├── useCart.ts           # Hook para leer el carrito desde cualquier componente
+│   │   │   └── cartReducer.ts       # Reducer con las acciones del carrito
 │   │   ├── data/
 │   │   │   ├── products.json    # Datos de los 42 platos
 │   │   │   ├── platos.ts        # Carga el JSON como lista de Product

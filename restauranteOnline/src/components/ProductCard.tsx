@@ -1,7 +1,7 @@
-import type { Product } from '../types/product'
-import { imagenPlato } from '../utils/imagenPlato'
-import { formatearPrecio } from '../utils/formatearPrecio'
 import { Link } from 'react-router'
+import type { Product } from '../types/product'
+import { formatearPrecio } from '../utils/formatearPrecio'
+import { imagenPlato } from '../utils/imagenPlato'
 
 interface ProductCardProps {
   plato: Product

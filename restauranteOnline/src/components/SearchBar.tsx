@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
+import { Link } from 'react-router'
 import { platos } from '../data/platos'
 import { normalizarTexto } from '../utils/normalizarTexto'
-import { Link } from 'react-router'
 
 interface SearchBarProps {
   valorInicial: string

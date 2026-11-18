@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import { useCart } from '../context/CartContext'
+import { useCart } from '../context/useCart'
 import type { Product } from '../types/product'
 import QuantitySelector from './QuantitySelector'
 

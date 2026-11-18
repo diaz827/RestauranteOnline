@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router'
 import CartLine from '../components/CartLine'
 import ConfirmDialog from '../components/ConfirmDialog'
-import { useCart } from '../context/CartContext'
+import { useCart } from '../context/useCart'
 import type { Product } from '../types/product'
 import { formatearPrecio } from '../utils/formatearPrecio'
 

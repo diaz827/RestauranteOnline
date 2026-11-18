@@ -1,10 +1,9 @@
-import logo from '../assets/imgLogos/logo.png'
-import { LuShoppingCart, LuMenu, LuSearch } from 'react-icons/lu'
 import { useState } from 'react'
 import type { FormEvent } from 'react'
+import { LuShoppingCart, LuMenu, LuSearch } from 'react-icons/lu'
 import { Link, NavLink, useNavigate } from 'react-router'
-import { useCart } from '../context/CartContext'
-
+import logo from '../assets/imgLogos/logo.png'
+import { useCart } from '../context/useCart'
 
 const claseEnlace = ({ isActive }: { isActive: boolean }) =>
   `block py-2 font-titulos text-crema border-b-2 ${isActive ? 'border-rojo' : 'border-transparent'}`
@@ -27,6 +26,7 @@ function Header() {
     setTextoBusqueda('')
     setBuscadorAbierto(false)
   }
+
   return (
     <>
       <header className="relative flex h-28 items-center justify-center bg-negro">
@@ -35,23 +35,23 @@ function Header() {
         </Link>
         <button
           type="button"
-          aria-label='Menú'
+          aria-label="Menú"
           aria-expanded={menuAbierto}
           aria-controls="menu-principal"
           onClick={() => {
             setMenuAbierto(!menuAbierto)
             setBuscadorAbierto(false)
           }}
-          className='absolute left-4 text-crema md:hidden'
+          className="absolute left-4 text-crema md:hidden"
         >
-          <LuMenu className='h-6 w-6' aria-hidden='true' />
+          <LuMenu className="h-6 w-6" aria-hidden="true" />
         </button>
         {buscadorAbierto && (
           <form
             role="search"
             onSubmit={buscar}
-            className="absolute top-full left-0 z-10 flex w-full items-center bg-gris-oscuro 
-            p-3 md:top-auto md:right-32 md:left-auto md:w-auto md:bg-transparent md:p-0">
+            className="absolute top-full left-0 z-10 flex w-full items-center bg-gris-oscuro p-3 md:top-auto md:right-32 md:left-auto md:w-auto md:bg-transparent md:p-0"
+          >
             <input
               type="search"
               autoFocus
@@ -78,13 +78,13 @@ function Header() {
         <Link
           to="/carrito"
           aria-label={`Carrito, ${totalUnidades} ${totalUnidades === 1 ? 'plato' : 'platos'}`}
-          className='absolute right-4 flex items-center gap-1 text-crema'
+          className="absolute right-4 flex items-center gap-1 text-crema"
         >
-          <LuShoppingCart className='h-6 w-6' aria-hidden='true' />
+          <LuShoppingCart className="h-6 w-6" aria-hidden="true" />
           {totalUnidades > 0 && (
             <span
               aria-hidden="true"
-              className='rounded-full bg-rojo px-2 text-sm font-bold text-crema'
+              className="rounded-full bg-rojo px-2 text-sm font-bold text-crema"
             >
               {totalUnidades}
             </span>

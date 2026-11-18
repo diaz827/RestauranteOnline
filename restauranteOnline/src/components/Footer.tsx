@@ -5,107 +5,107 @@ import { Link } from 'react-router'
 import { restaurante } from '../data/restaurante'
 
 function Footer() {
-    return (
-        <footer className="grid gap-8 bg-negro px-4 py-8 text-crema md:grid-cols-3">
-            <section>
-                <h2 className="mb-3 w-fit border-b-2 border-rojo pb-1 font-titulos tracking-wide text-crema uppercase">Visítanos</h2>
-                <address className='not-italic'>
-                    <ul className='space-y-2'>
-                        <li className="flex items-start gap-3">
-                            <LuMapPin aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-rojo" />
-                            <a href={restaurante.mapa} target="_blank" rel="noopener noreferrer">
-                                {restaurante.direccion}
-                            </a>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <LuPhone aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-rojo" />
-                            <a href={restaurante.telefonoEnlace}>{restaurante.telefono}</a>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <LuClock aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-rojo" />
-                            <span>
-                                {restaurante.horario.map(({ dias, horas }) => (
-                                    <span key={dias} className="block">
-                                        {dias}: {horas}
-                                    </span>
-                                ))}
-                            </span>
-                        </li>
-                    </ul>
-                </address>
-            </section>
-            <nav aria-label="Enlaces rápidos">
-                <h2 className="mb-3 w-fit border-b-2 border-rojo pb-1 font-titulos tracking-wide text-crema uppercase">Enlaces rápidos</h2>
-                <ul className='space-y-2'>
-                    <li><Link to="/">Destacados</Link></li>
-                    <li><Link to="/carta">Carta</Link></li>
-                    <li><Link to="/reservas">Reservas</Link></li>
-                </ul>
-            </nav>
-            <section>
-                <h2 className="mb-3 w-fit border-b-2 border-rojo pb-1 font-titulos tracking-wide text-crema uppercase">Síguenos</h2>
-                <ul className="flex gap-3">
-                    <li>
-                        <a
-                            href="https://www.instagram.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Instagram"
-                            className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
-                        >
-                            <FaInstagram aria-hidden="true" className="h-5 w-5" />
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://www.facebook.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Facebook"
-                            className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
-                        >
-                            <FaFacebook aria-hidden="true" className="h-5 w-5" />
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://www.tiktok.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="TikTok"
-                            className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
-                        >
-                            <FaTiktok aria-hidden="true" className="h-5 w-5" />
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://www.linkedin.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="LinkedIn"
-                            className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
-                        >
-                            <FaLinkedin aria-hidden="true" className="h-5 w-5" />
-                        </a>
-                    </li>
-                </ul>
-            </section>
-            <section className="md:col-span-3">
-                <h2 className="sr-only">Métodos de pago</h2>
-                <ul className="flex flex-wrap items-center justify-center gap-10 text-crema/80">
-                    <li><SiVisa aria-label="Visa" role="img" className="h-6 w-auto" /></li>
-                    <li><SiMastercard aria-label="Mastercard" role="img" className="h-6 w-auto" /></li>
-                    <li><SiAmericanexpress aria-label="American Express" role="img" className="h-6 w-auto" /></li>
-                    <li><SiPaypal aria-label="PayPal" role="img" className="h-6 w-auto" /></li>
-                    <li><SiApplepay aria-label="Apple Pay" role="img" className="h-6 w-auto" /></li>
-                    <li><SiGooglepay aria-label="Google Pay" role="img" className="h-6 w-auto" /></li>
-                    <li><SiRevolut aria-label="Revolut" role="img" className="h-6 w-auto" /></li>
-                </ul>
-            </section>
-            <small className='border-t border-crema/20 pt-4 text-center md:col-span-3'>© 2026 Crunna Diner · Negocio ficticio</small>
-        </footer>
-    )
+  return (
+    <footer className="grid gap-8 bg-negro px-4 py-8 text-crema md:grid-cols-3">
+      <section>
+        <h2 className="mb-3 w-fit border-b-2 border-rojo pb-1 font-titulos tracking-wide text-crema uppercase">Visítanos</h2>
+        <address className="not-italic">
+          <ul className="space-y-2">
+            <li className="flex items-start gap-3">
+              <LuMapPin aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-rojo" />
+              <a href={restaurante.mapa} target="_blank" rel="noopener noreferrer">
+                {restaurante.direccion}
+              </a>
+            </li>
+            <li className="flex items-start gap-3">
+              <LuPhone aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-rojo" />
+              <a href={restaurante.telefonoEnlace}>{restaurante.telefono}</a>
+            </li>
+            <li className="flex items-start gap-3">
+              <LuClock aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-rojo" />
+              <span>
+                {restaurante.horario.map(({ dias, horas }) => (
+                  <span key={dias} className="block">
+                    {dias}: {horas}
+                  </span>
+                ))}
+              </span>
+            </li>
+          </ul>
+        </address>
+      </section>
+      <nav aria-label="Enlaces rápidos">
+        <h2 className="mb-3 w-fit border-b-2 border-rojo pb-1 font-titulos tracking-wide text-crema uppercase">Enlaces rápidos</h2>
+        <ul className="space-y-2">
+          <li><Link to="/">Destacados</Link></li>
+          <li><Link to="/carta">Carta</Link></li>
+          <li><Link to="/reservas">Reservas</Link></li>
+        </ul>
+      </nav>
+      <section>
+        <h2 className="mb-3 w-fit border-b-2 border-rojo pb-1 font-titulos tracking-wide text-crema uppercase">Síguenos</h2>
+        <ul className="flex gap-3">
+          <li>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
+            >
+              <FaInstagram aria-hidden="true" className="h-5 w-5" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
+            >
+              <FaFacebook aria-hidden="true" className="h-5 w-5" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.tiktok.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
+            >
+              <FaTiktok aria-hidden="true" className="h-5 w-5" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="flex h-10 w-10 items-center justify-center rounded border border-crema/40 hover:border-rojo hover:text-rojo"
+            >
+              <FaLinkedin aria-hidden="true" className="h-5 w-5" />
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section className="md:col-span-3">
+        <h2 className="sr-only">Métodos de pago</h2>
+        <ul className="flex flex-wrap items-center justify-center gap-10 text-crema/80">
+          <li><SiVisa aria-label="Visa" role="img" className="h-6 w-auto" /></li>
+          <li><SiMastercard aria-label="Mastercard" role="img" className="h-6 w-auto" /></li>
+          <li><SiAmericanexpress aria-label="American Express" role="img" className="h-6 w-auto" /></li>
+          <li><SiPaypal aria-label="PayPal" role="img" className="h-6 w-auto" /></li>
+          <li><SiApplepay aria-label="Apple Pay" role="img" className="h-6 w-auto" /></li>
+          <li><SiGooglepay aria-label="Google Pay" role="img" className="h-6 w-auto" /></li>
+          <li><SiRevolut aria-label="Revolut" role="img" className="h-6 w-auto" /></li>
+        </ul>
+      </section>
+      <small className="border-t border-crema/20 pt-4 text-center md:col-span-3">© 2026 Crunna Diner · Negocio ficticio</small>
+    </footer>
+  )
 }
 
 export default Footer

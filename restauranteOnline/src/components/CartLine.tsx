@@ -1,7 +1,7 @@
 import { LuTrash2 } from 'react-icons/lu'
 import { Link } from 'react-router'
-import { useCart } from '../context/CartContext'
 import type { CartItem } from '../context/cartReducer'
+import { useCart } from '../context/useCart'
 import { formatearPrecio } from '../utils/formatearPrecio'
 import { imagenPlato } from '../utils/imagenPlato'
 import QuantitySelector from './QuantitySelector'
