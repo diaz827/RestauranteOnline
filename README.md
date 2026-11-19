@@ -40,7 +40,8 @@ Los datos se cargan desde un fichero JSON, así que la carta se puede ampliar o 
 3. [Instalación y configuración](#instalación-y-configuración)
 4. [Estructura del proyecto](#estructura-del-proyecto)
 5. [Datos de los productos](#datos-de-los-productos)
-6. [Créditos y licencias](#créditos-y-licencias)
+6. [Accesibilidad](#accesibilidad)
+7. [Créditos y licencias](#créditos-y-licencias)
 
 ---
 
@@ -236,6 +237,22 @@ Los datos de contacto del restaurante (dirección, teléfono y horario) están e
 
 ---
 
+## Accesibilidad
+
+La web se ha construido pensando en que pueda usarla cualquier persona, también con teclado o con un lector de pantalla:
+
+- **HTML semántico**: regiones (`header`, `nav`, `main`, `aside`, `footer`), un solo `h1` por página, listas, `<dl>` para pares de datos y `<dialog>` para las ventanas de confirmación e información.
+- **Etiquetas y nombres**: todas las imágenes llevan `alt`, los campos de formulario tienen `label`, y los botones solo con icono llevan `aria-label`. Los errores de la reserva se vinculan a su campo con `aria-invalid` y `aria-describedby`.
+- **Teclado**: todo se puede usar sin ratón. Los diálogos atrapan el foco y se cierran con `Escape`, y al enviar una reserva el foco pasa al título de la confirmación.
+- **Avisos**: los cambios importantes (resultados de la búsqueda, sugerencias, plato añadido al carrito, errores del formulario) se anuncian con regiones `role="status"` o `role="alert"`.
+- **Contraste** del texto ajustado a WCAG 2.1 nivel AA, y cada página tiene su propio título de pestaña.
+
+### Pruebas realizadas
+
+| Prueba | Resultado |
+|---|---|
+| **Lighthouse** (Accesibilidad) | **100/100** en Inicio, Carta, Detalle y Reservas en escritorio, y en Inicio y Reservas en móvil |
+| **Navegación solo con teclado** | Recorrido completo de la cabecera, la carta (búsqueda, sugerencias, categorías y paginación), el detalle, el carrito (con sus diálogos), las reservas y las ventanas de información en móvil. No se encontró ningún fallo |
 ## Créditos y licencias
 
 ### Fotos de los platos
