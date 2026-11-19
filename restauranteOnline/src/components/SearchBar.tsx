@@ -43,8 +43,6 @@ export default function SearchBar({ valorInicial, onBuscar }: SearchBarProps) {
           if (evento.key === 'Escape') setAbierto(false)
         }}
         autoComplete="off"
-        aria-expanded={abierto && sugerencias.length > 0}
-        aria-controls="sugerencias-carta"
         placeholder="Buscar un plato..."
         className="min-w-0 flex-1 rounded-md border border-borde bg-white px-4 py-3 placeholder:text-gris"
       />
@@ -57,7 +55,6 @@ export default function SearchBar({ valorInicial, onBuscar }: SearchBarProps) {
 
       {abierto && sugerencias.length > 0 && (
         <ul
-          id="sugerencias-carta"
           className="absolute top-full right-0 left-0 z-10 mt-1 overflow-hidden rounded-md border border-borde bg-white shadow-lg"
         >
           {sugerencias.map((plato) => (
@@ -72,6 +69,10 @@ export default function SearchBar({ valorInicial, onBuscar }: SearchBarProps) {
           ))}
         </ul>
       )}
+
+      <p role="status" className="sr-only">
+        {abierto && sugerencias.length > 0 ? `${sugerencias.length} sugerencias disponibles` : ''}
+      </p>
     </form>
   )
 }
