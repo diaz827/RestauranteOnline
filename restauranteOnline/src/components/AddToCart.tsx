@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
+import { Link } from 'react-router'
 import { useCart } from '../context/useCart'
 import type { Product } from '../types/product'
 import QuantitySelector from './QuantitySelector'
@@ -11,7 +12,7 @@ interface AddToCartProps {
 export default function AddToCart({ plato }: AddToCartProps) {
   const [cantidad, setCantidad] = useState(1)
   const [anadido, setAnadido] = useState(false)
-  const { anadir } = useCart()
+  const { anadir, totalUnidades } = useCart()
 
   function cambiarCantidad(nueva: number) {
     setCantidad(nueva)
@@ -41,6 +42,15 @@ export default function AddToCart({ plato }: AddToCartProps) {
       <p role="status" className="font-bold text-rojo empty:hidden">
         {anadido && 'Añadido al carrito'}
       </p>
+
+      {totalUnidades > 0 && (
+        <Link
+          to="/carrito"
+          className="w-fit rounded-md border border-negro px-5 py-3 font-bold tracking-widest uppercase"
+        >
+          Ver carrito ({totalUnidades})
+        </Link>
+      )}
     </>
   )
 }
