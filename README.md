@@ -311,7 +311,7 @@ Todas las fotos de los platos son de [Unsplash](https://unsplash.com) y se usan 
 
 ### Imágenes del banner
 
-Las dos imágenes del banner de la página de inicio (`hero-escritorio.webp` y `hero-movil.webp`, en `src/assets/imgBanner/`) están **generadas con inteligencia artificial**: no son fotografías reales.
+Las imágenes del banner de la página de inicio (`hero-escritorio-ancho.webp` para ordenador y tablet, y `hero-movil.webp` para móvil, en `src/assets/imgBanner/`) están **generadas con inteligencia artificial**: no son fotografías reales.
 
 ### Iconos y logos
 

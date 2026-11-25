@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { LuMapPin, LuClock } from 'react-icons/lu'
 import { Link } from 'react-router'
-import heroEscritorio from '../assets/imgBanner/hero-escritorio.webp'
+import heroEscritorio from '../assets/imgBanner/hero-escritorio-ancho.webp'
 import heroMovil from '../assets/imgBanner/hero-movil.webp'
 import ProductGrid from '../components/ProductGrid'
 import { platos } from '../data/platos'
@@ -19,7 +19,7 @@ function HomePage() {
           <img
             src={heroMovil}
             alt="Hamburguesa doble con queso fundido sobre una mesa de madera"
-            className="h-128 w-full object-cover md:h-136 md:object-right"
+            className="h-128 w-full object-cover md:h-136 md:object-right lg:h-[30vw] lg:object-[100%_25%]"
           />
         </picture>
         <article className="absolute right-4 bottom-4 left-4 rounded-xl border-l-8 border-rojo bg-hueso p-6 md:top-1/2 md:right-auto md:bottom-auto md:left-12 md:w-112 md:-translate-y-1/2 md:p-8">
