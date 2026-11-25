@@ -6,7 +6,7 @@ import logo from '../assets/imgLogos/logo.png'
 import { useCart } from '../context/useCart'
 
 const claseEnlace = ({ isActive }: { isActive: boolean }) =>
-  `block py-2 font-titulos text-crema border-b-2 ${isActive ? 'border-rojo' : 'border-transparent'}`
+  `block py-1.5 font-titulos text-crema border-b-2 ${isActive ? 'border-rojo' : 'border-transparent'}`
 
 function Header() {
   const [menuAbierto, setMenuAbierto] = useState(false)
@@ -29,9 +29,9 @@ function Header() {
 
   return (
     <>
-      <header className="relative flex h-28 items-center justify-center bg-negro">
+      <header className="relative flex h-20 items-center justify-center bg-negro">
         <Link to="/">
-          <img src={logo} alt="Crunna Diner" className="h-20" />
+          <img src={logo} alt="Crunna Diner" className="h-14" />
         </Link>
         <button
           type="button"
@@ -93,7 +93,7 @@ function Header() {
       </header>
       <nav
         id="menu-principal"
-        className={`bg-gris-oscuro border-b-4 border-rojo py-2 ${menuAbierto ? 'block' : 'hidden'} md:block`}>
+        className={`bg-gris-oscuro border-b-4 border-rojo py-1 ${menuAbierto ? 'block' : 'hidden'} md:block`}>
         <ul className="flex flex-col items-center gap-2 md:flex-row md:justify-center md:gap-20">
           <li>
             <NavLink to="/" className={claseEnlace} onClick={() => setMenuAbierto(false)}>
